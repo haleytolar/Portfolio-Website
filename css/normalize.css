@@ -196,7 +196,11 @@ button,
 [type="button"],
 [type="reset"],
 [type="submit"] {
+<<<<<<< Updated upstream
    appearance: button;
+=======
+  appearance: button;
+>>>>>>> Stashed changes
 }
 
 /**

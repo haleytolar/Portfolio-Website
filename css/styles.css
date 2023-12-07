@@ -105,6 +105,7 @@ button:focus,
 
 .page-header__item {
     flex: 0 1 200px;
+    box-sizing: border-box; 
 }
 
 .page-header__item:last-child {
