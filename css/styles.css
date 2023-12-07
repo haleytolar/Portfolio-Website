@@ -171,7 +171,8 @@ button:focus,
 }
 
 .center {
-    margin-left: 400px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .animation-svg {
