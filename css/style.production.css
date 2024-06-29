@@ -6,18 +6,20 @@
 */
 
 body {
-    background-color: #C2DFE3;
-    color: black;
+    background-image: url('img/background.jpg'); /* Path to your image */
+    background-size: cover; /* Resize the background image to cover the entire container */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
     font-family: 'Play', sans-serif;
-    font-weight: 400;
+    font-weight: 900;
     font-size: 16px;
     line-height: 1.6;
-}
+  }
 
 h1 {
     font-size: 30px;
     font-weight: 700;
-    color: black;
+    
 }
 
 h2 {

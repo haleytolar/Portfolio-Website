@@ -3,28 +3,65 @@
     --h1: #0000ff;
     --link: #541a48;
     --Visitedlink: rgb(35, 65, 202);
-    --activelink: #3adf5b;
+    --activelink: lightblue;
     --headweight: 700;
     --gridpadding: 10px;
+    --header-bg: #333;
+    --header-link-color: #fff;
+    --header-link-hover-color: #ff6347;
+    --header-link-active-bg: #444;
 }
 
-
-
-
-body {
-    background-color: white;
-    color: var(--primary);
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
     font-family: 'Play', sans-serif;
-    font-weight: 400;
+    font-weight: 900;
     font-size: 16px;
     line-height: 1.6;
 }
 
-h1 {
-    font-size: 30px;
-    font-weight: var(--headweight);
-    color: var(--h1);
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff68f; /* Pastel yellow color */
 }
+
+.wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.page-header, .profile, .page-footer {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 20px;
+    background: transparent;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: var(--headweight);
+    color: white;
+    text-shadow: -1px -1px 0 black,  
+                 1px -1px 0 black,
+                 -1px 1px 0 black,
+                 1px 1px 0 black;
+}
+
+.custom-h1 {
+    font-size: 40px;
+    font-weight: var(--headweight);
+    color: lightblue;
+    text-shadow: -1px -1px 0 black,  
+                 1px -1px 0 black,
+                 -1px 1px 0 black,
+                 1px 1px 0 black;
+}
+
 
 h2 {
     font-size: 24px;
@@ -36,12 +73,17 @@ h3 {
     font-weight: var(--headweight);
 }
 
-a {
-    color: var(--link);
+.navigation-list__item {
+    text-decoration: none;
+    color: white;
+    text-shadow: -1px -1px 0 black,  
+                 1px -1px 0 black,
+                 -1px 1px 0 black,
+                 1px 1px 0 black;
 }
 
 a:visited {
-    color: var(--Visitedlink);
+    color: white;
 }
 
 a:hover, a:focus {
@@ -52,11 +94,23 @@ a:active {
     color: var(--activelink);
 }
 
+
+
+.intro a {
+    color: lightblue; /* Use the blue color variable */
+    text-decoration: none;
+    text-shadow: -1px -1px 0 black,  
+                 1px -1px 0 black,
+                 -1px 1px 0 black,
+                 1px 1px 0 black;
+}
+
+
 .button, button {
     border: none;
     display: inline-block;
     font-family: inherit;
-    background-color: var(--link);
+    background-color: lightblue;
     color: white;
     text-decoration: none;
     padding: 10px;
@@ -67,29 +121,42 @@ a:active {
 
 button:hover,
 button:focus,
- .button:hover
- .button:focus {
+.button:hover,
+.button:focus {
     cursor: pointer;
     opacity: 0.8;
 }
 
 .profile__portrait {
-    float: left;
     width: 250px;
-    margin-right: 40px;
+    margin-bottom: 20px;
     border-radius: 50%;
 }
 
 .page-footer {
     clear: both;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 20px;
+    color: white;
+    text-shadow: -1px -1px 0 black,  
+                 1px -1px 0 black,
+                 -1px 1px 0 black,
+                 1px 1px 0 black;
 }
 
 .profile {
-    max-width: 700px;
+    max-width: 1000px;
     margin: 0 auto;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 20px;
 }
 
 * {
@@ -98,14 +165,18 @@ button:focus,
 
 .page-header {
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
     padding: 20px;
-    border-bottom: 1px solid black;
+    background: transparent;
+    border: none;
+    box-shadow: none;
 }
 
 .page-header__item {
     flex: 0 1 200px;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 .page-header__item:last-child {
@@ -115,65 +186,69 @@ button:focus,
 
 .navigation-list {
     list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 24px;
 }
 
 .navigation-list li {
     display: inline-block;
     margin-left: 15px;
+    border: none;
+    background: none;
+    padding: 0;
 }
 
 .navigation-list__item--active {
-    text-decoration: none;
+    text-decoration: underline;
+    font-weight: bold;
 }
 
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
     grid-gap: 20px;
 }
 
 .grid__item {
-    background-color: lightgray;
+    background-color: lightblue;
     padding: var(--gridpadding);
-}
-
-.grid__item:last-child {
-    grid-column: 3 / 3;
-    grid-row: 1 / 3;
 }
 
 @media all and (max-width: 500px) {
     .grid {
-      grid-template-columns: 1fr;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
     }
-  }
-@media all and (min-width: 500px) and (max-width: 750px){
+}
+
+@media all and (min-width: 500px) and (max-width: 750px) {
     .grid {
-      grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
     }
-  }
+}
+
 @media all and (max-width: 750px) {
     .grid {
-      grid-gap: var(--gridpadding);
+        grid-gap: var(--gridpadding);
     }
     .grid__item:last-child {
-      grid-column: auto / auto;
-      grid-row: auto / auto;
+        grid-column: auto / auto;
+        grid-row: auto / auto;
     }
     h1 {
-      font-size: 22px;
+        font-size: 22px;
     }
-  }
+}
 
 .main {
     text-align: center;
-    margin-left: 200px;
-    margin-right: 200px;
-}
-
-.center {
-    margin-left: auto;
-    margin-right: auto;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 20px;
 }
 
 .animation-svg {
@@ -182,35 +257,29 @@ button:focus,
 
 @keyframes color-change {
     0% {
-      fill: red;
+        fill: #e2dbef;
     }
-
     20% {
-        fill: orange;
+        fill: #d2b3e0;
     }
-
     40% {
-        fill: yellow;
+        fill: #b4a7d6;
     }
-
     60% {
-        fill: green;
+        fill: #8979b7;
     }
-
     80% {
-        fill: blue;
+        fill: #7f6cb0;
     }
-      
     100% {
-      fill: purple;
+        fill: purple;
     }
-
     from {
         transform: translate(446px, 48px);
-      }
-      to {
+    }
+    to {
         transform: translate(100px, 48px);
-      }
+    }
 }
 
 .sun {
@@ -219,8 +288,98 @@ button:focus,
     animation-iteration-count: infinite;
     animation-direction: alternate;
     animation-timing-function: linear;
-  }
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    background-color: lightblue;
+    border-collapse: collapse;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.circle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 400px;
+    max-width: 700px;
+    min-height: 400px;
+    max-height: 700px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+}
+
+.intro, .page-footer {
+    margin-bottom: 20px;
+    font-size: larger;
+}
+
+.intro-text {
+    font-size: 20px; /* Adjust the font size as needed */
+}
 
 
+/* Additional styles for the social media icons to ensure no border or outline */
+.social-media {
+    border: none;
+    outline: none;
+    box-shadow: none;
+    transition: transform 0.2s; /* Optional: Add a slight transform effect on hover */
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    background: none;
+}
+
+.social-media img:hover {
+    transform: scale(1.1); /* Optional: Slightly enlarge the icon on hover */
+}
+
+/* Add this CSS to your existing stylesheet or create a new one */
+.main {
+    background-color: #fff; /* Set the background color of the main element */
+    border-radius: 50%; /* Makes the element oval-shaped */
+    width: 80%; /* Adjust the width of the oval */
+    max-width: 800px; /* Set a maximum width to maintain responsiveness */
+    padding: 40px; /* Add padding inside the oval */
+    margin: 20px auto; /* Center the oval horizontally and provide some space */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Optional: add a shadow for depth */
+    text-align: center; /* Center align text inside the oval */
+}
+
+.main p {
+    font-size: 16px; /* Adjust the font size for the paragraph */
+    max-width: 600px; /* Set a maximum width for the paragraph to prevent it from expanding too wide */
+    margin: 0 auto; /* Center align the paragraph */
+}
+
+
+.main h1 {
+    text-align: center; /* Center align the heading inside the oval */
+}
+
+.main div {
+    text-align: center; /* Center align other content inside the oval */
+}
+
+/* Adjust styles for form elements inside the oval */
+.main form {
+    text-align: center; /* Center align the form inside the oval */
+}
 
 
