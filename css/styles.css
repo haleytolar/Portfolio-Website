@@ -1,15 +1,6 @@
 :root {
-    --primary: #9e2121;
-    --h1: #0000ff;
-    --link: #541a48;
-    --Visitedlink: rgb(35, 65, 202);
-    --activelink: lightblue;
-    --headweight: 700;
-    --gridpadding: 10px;
-    --header-bg: #333;
-    --header-link-color: #fff;
-    --header-link-hover-color: #ff6347;
-    --header-link-active-bg: #444;
+    --tan-bg: #f0e6d6; 
+
 }
 
 html, body {
@@ -20,12 +11,12 @@ html, body {
     font-weight: 900;
     font-size: 16px;
     line-height: 1.6;
+    background: #d2b48c url('https://www.transparenttextures.com/patterns/gray-floral.png');
+    background-size: cover;
 }
 
 body {
-    display: flex;
-    flex-direction: column;
-    background-color: #fff68f; /* Pastel yellow color */
+    height: 100vh;
 }
 
 .wrapper {
@@ -43,25 +34,24 @@ body {
 }
 
 h1 {
-    font-size: 40px;
+    font-size: 60px;
     font-weight: var(--headweight);
-    color: white;
-    text-shadow: -1px -1px 0 black,  
-                 1px -1px 0 black,
-                 -1px 1px 0 black,
-                 1px 1px 0 black;
+    color: lightblue;
+    text-shadow: -1px -1px 0 var(--text-shadow-color),  
+                 1px -1px 0 var(--text-shadow-color),
+                 -1px 1px 0 var(--text-shadow-color),
+                 1px 1px 0 var(--text-shadow-color);
 }
 
 .custom-h1 {
-    font-size: 40px;
+    font-size: 50px;
     font-weight: var(--headweight);
     color: lightblue;
-    text-shadow: -1px -1px 0 black,  
-                 1px -1px 0 black,
-                 -1px 1px 0 black,
-                 1px 1px 0 black;
+    text-shadow: -1px -1px 0 var(--text-shadow-color),  
+                 1px -1px 0 var(--text-shadow-color),
+                 -1px 1px 0 var(--text-shadow-color),
+                 1px 1px 0 var(--text-shadow-color);
 }
-
 
 h2 {
     font-size: 24px;
@@ -73,38 +63,55 @@ h3 {
     font-weight: var(--headweight);
 }
 
-.navigation-list__item {
+
+
+
+a {
     text-decoration: none;
-    color: white;
-    text-shadow: -1px -1px 0 black,  
-                 1px -1px 0 black,
-                 -1px 1px 0 black,
-                 1px 1px 0 black;
+    font-family: 'Lato', sans-serif; 
+    font-weight: 700; 
+    text-decoration: none; 
+    display: block; 
+    margin: 0.5rem 0; 
+    font-size: 20px;
 }
 
-a:visited {
-    color: white;
+
+
+.navigation-list li {
+    display: inline-block;
+    margin-left: 15px;
+    border: none; 
+    background: none; 
+    padding: 0; 
 }
 
-a:hover, a:focus {
+
+p {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300; 
+    color: #333; 
+    margin-top: 0.5rem; 
+    font-size: 20px;
+}
+
+.intro a.cta-button {
+    display: inline-block;
+    color: lightblue;
     text-decoration: none;
+    padding: 10px 20px;
+    background: var(--header-bg);
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    text-shadow: -1px -1px 0 var(--text-shadow-color),  
+                 1px -1px 0 var(--text-shadow-color),
+                 -1px 1px 0 var(--text-shadow-color),
+                 1px 1px 0 var(--text-shadow-color);
 }
 
-a:active {
-    color: var(--activelink);
+.intro a.cta-button:hover {
+    background-color: var(--header-link-hover-color);
 }
-
-
-
-.intro a {
-    color: lightblue; /* Use the blue color variable */
-    text-decoration: none;
-    text-shadow: -1px -1px 0 black,  
-                 1px -1px 0 black,
-                 -1px 1px 0 black,
-                 1px 1px 0 black;
-}
-
 
 .button, button {
     border: none;
@@ -127,12 +134,6 @@ button:focus,
     opacity: 0.8;
 }
 
-.profile__portrait {
-    width: 250px;
-    margin-bottom: 20px;
-    border-radius: 50%;
-}
-
 .page-footer {
     clear: both;
     display: flex;
@@ -144,10 +145,10 @@ button:focus,
     box-shadow: none;
     padding: 20px;
     color: white;
-    text-shadow: -1px -1px 0 black,  
-                 1px -1px 0 black,
-                 -1px 1px 0 black,
-                 1px 1px 0 black;
+    text-shadow: -1px -1px 0 var(--text-shadow-color),  
+                 1px -1px 0 var(--text-shadow-color),
+                 -1px 1px 0 var(--text-shadow-color),
+                 1px 1px 0 var(--text-shadow-color);
 }
 
 .profile {
@@ -157,6 +158,20 @@ button:focus,
     border: none;
     box-shadow: none;
     padding: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.profile__portrait {
+    width: 250px; 
+    height: 250px; 
+    border-radius: 12px; 
+    margin-right: 20px; 
+    object-fit: cover; 
+}
+
+.profile__content {
+    flex: 1;
 }
 
 * {
@@ -175,7 +190,7 @@ button:focus,
 }
 
 .page-header__item {
-    flex: 0 1 200px;
+    flex: 0 1 400px;
     box-sizing: border-box;
 }
 
@@ -191,195 +206,304 @@ button:focus,
     font-size: 24px;
 }
 
-.navigation-list li {
-    display: inline-block;
-    margin-left: 15px;
-    border: none;
-    background: none;
-    padding: 0;
+
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 150px); 
+    padding: 20px;
 }
 
-.navigation-list__item--active {
-    text-decoration: underline;
-    font-weight: bold;
+
+.main-content-wrapper {
+    background: rgba(255, 255, 255, 0.9); 
+    border-radius: 12px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    padding: 50px;
+    text-align: center;
+    max-width: 800px; 
+    margin: 20px auto;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; 
 }
+
+.main-content-wrapper:hover {
+    background: rgba(255, 255, 255, 1); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+}
+
 
 .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    grid-gap: 20px;
-}
-
-.grid__item {
-    background-color: lightblue;
-    padding: var(--gridpadding);
-}
-
-@media all and (max-width: 500px) {
-    .grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
-    }
-}
-
-@media all and (min-width: 500px) and (max-width: 750px) {
-    .grid {
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: auto auto;
-    }
-}
-
-@media all and (max-width: 750px) {
-    .grid {
-        grid-gap: var(--gridpadding);
-    }
-    .grid__item:last-child {
-        grid-column: auto / auto;
-        grid-row: auto / auto;
-    }
-    h1 {
-        font-size: 22px;
-    }
-}
-
-.main {
-    text-align: center;
-    background: transparent;
-    border: none;
-    box-shadow: none;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-gap: 40px; 
     padding: 20px;
 }
 
-.animation-svg {
-    width: 100%;
+.homegrid-container {
+    display: flex;
+    justify-content: flex-end; 
+    padding: 20px;
+    margin-top: 20px;
 }
 
-@keyframes color-change {
-    0% {
-        fill: #e2dbef;
-    }
-    20% {
-        fill: #d2b3e0;
-    }
-    40% {
-        fill: #b4a7d6;
-    }
-    60% {
-        fill: #8979b7;
-    }
-    80% {
-        fill: #7f6cb0;
-    }
-    100% {
-        fill: purple;
-    }
-    from {
-        transform: translate(446px, 48px);
-    }
-    to {
-        transform: translate(100px, 48px);
-    }
-}
-
-.sun {
-    animation-duration: 4s;
-    animation-name: color-change;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    animation-timing-function: linear;
-}
-
-.center {
-    margin-left: auto;
-    margin-right: auto;
-    background-color: lightblue;
-    border-collapse: collapse;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-p {
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.circle {
+.homegrid {
+    width: 400px; 
+    height: 800px; 
+    background: var(--tan-bg); 
+    border-radius: 12px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    padding: 20px;
+    text-align: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    min-width: 400px;
-    max-width: 700px;
-    min-height: 400px;
-    max-height: 700px;
-    margin: 20px auto;
+    align-items: center; 
+    margin-left: 1500px; 
+}
+
+.grid__item {
+    background: rgba(255, 255, 255, 0.9); 
+    border-radius: 12px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
     padding: 20px;
-    background-color: white;
-    border: 2px solid white;
-    border-radius: 50%;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
+    text-align: center;
+    height: 500px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden; 
+}
+
+.grid__item:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); 
+}
+
+
+.grid__item img {
+    max-width: 100%;
+    max-height: 70%; 
+    object-fit: contain; 
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.grid__item h2, 
+.grid__item p {
+    margin: 10px 0;
+}
+
+
+@media all and (max-width: 900px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media all and (max-width: 600px) {
+    .grid {
+        grid-template-columns: 1fr; 
+    }
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    grid-gap: 10px; 
+    max-width: 400px; 
+    margin: 20px auto; 
+}
+
+.skill-title {
+    background-color: var(--tan-bg); 
+    padding: 10px;
+    border-radius: 8px;
+    text-align: left; 
+    font-weight: bold;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+.skill-level {
+    background-color: var(--tan-bg); 
+    padding: 10px;
+    border-radius: 8px;
+    text-align: right; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+}
+
+
+.grid__item h2 {
+    font-family: 'Anton', sans-serif;
+    color: tan;
+    margin: 0;
+    font-size: 2rem; 
+}
+
+
+.grid__item a {
+    font-family: 'Lato', sans-serif; 
+    font-weight: 700; 
+    color: tan; 
+    text-decoration: none; 
+    display: block; 
+    margin: 0.5rem 0; 
+}
+
+.footer-text {
+    color: white; 
+    font-size: 28px; 
+    font-weight: 300; 
+    font-family: 'Play', sans-serif; 
+    letter-spacing: 0.5px; 
+    line-height: 1.4; 
+}
+
+
+.page-footer img {
+    width: 40px; 
+    height: 40px; 
+    transition: transform 0.3s ease; 
+}
+
+
+.page-footer img:hover {
+    transform: scale(1.2); 
+}
+
+
+.content-box {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 900px;
+    margin: 20px auto; 
+    display: flex; 
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+}
+.contact-box, .form-box {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    flex: 1; 
+    max-width: 45%; 
+    text-align: center;
+    min-width: 300px; 
+}
+.form-box h1, .contact-box h1 {
+    font-size: 24px; 
+    margin-bottom: 20px; 
+}
+.form-group {
+    margin-bottom: 15px;
+}
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+.form-group textarea {
+    resize: vertical;
+}
+.submit-btn {
+    background-color: lightblue;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.contact-info {
     text-align: center;
 }
-
-.intro, .page-footer {
-    margin-bottom: 20px;
-    font-size: larger;
+.contact-info span {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.contact-info a {
+    color: tan; 
+    text-decoration: none; 
+}
+.contact-info a:hover {
+    text-decoration: none; 
 }
 
-.intro-text {
-    font-size: 20px; /* Adjust the font size as needed */
-}
-
-
-/* Additional styles for the social media icons to ensure no border or outline */
-.social-media {
-    border: none;
-    outline: none;
-    box-shadow: none;
-    transition: transform 0.2s; /* Optional: Add a slight transform effect on hover */
-    list-style-type: none;
+.navigation-list__item {
+    text-decoration: none;
+    color: white; 
+    font-family: 'Play', sans-serif;
+    font-weight: 300;
+    font-size: 28px;
+    line-height: 1.4;
+    letter-spacing: 0.5px;
     padding: 0;
-    margin: 0;
-    background: none;
+    background: transparent;
+    text-shadow: -1px -1px 0 var(--text-shadow-color),  
+                 1px -1px 0 var(--text-shadow-color),
+                 -1px 1px 0 var(--text-shadow-color),
+                 1px 1px 0 var(--text-shadow-color); 
 }
 
-.social-media img:hover {
-    transform: scale(1.1); /* Optional: Slightly enlarge the icon on hover */
+.navigation-list li {
+    display: inline-block;
+    margin-left: 15px;
 }
 
-/* Add this CSS to your existing stylesheet or create a new one */
-.main {
-    background-color: #fff; /* Set the background color of the main element */
-    border-radius: 50%; /* Makes the element oval-shaped */
-    width: 80%; /* Adjust the width of the oval */
-    max-width: 800px; /* Set a maximum width to maintain responsiveness */
-    padding: 40px; /* Add padding inside the oval */
-    margin: 20px auto; /* Center the oval horizontally and provide some space */
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1); /* Optional: add a shadow for depth */
-    text-align: center; /* Center align text inside the oval */
+.content-box {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 900px;
+    margin: 20px auto;
+    text-align: center; 
+}
+.content-box h1 {
+    font-size: 24px; 
+    margin-bottom: 20px; 
+}
+.main-content {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    gap: 20px; 
+}
+.intro-text {
+    text-align: center; 
+}
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    gap: 10px;
+    justify-content: center; 
+    margin-top: 20px; 
+}
+.skill-title {
+    font-weight: bold;
+}
+.skill-level {
+    font-size: 14px; 
 }
 
-.main p {
-    font-size: 16px; /* Adjust the font size for the paragraph */
-    max-width: 600px; /* Set a maximum width for the paragraph to prevent it from expanding too wide */
-    margin: 0 auto; /* Center align the paragraph */
+.page-title {
+    text-align: center;
+    font-size: 60px;
+font-weight: var(--headweight);
+color: lightblue;
+text-shadow: -1px -1px 0 var(--text-shadow-color),  
+         1px -1px 0 var(--text-shadow-color),
+         -1px 1px 0 var(--text-shadow-color),
+         1px 1px 0 var(--text-shadow-color);
 }
-
-
-.main h1 {
-    text-align: center; /* Center align the heading inside the oval */
-}
-
-.main div {
-    text-align: center; /* Center align other content inside the oval */
-}
-
-/* Adjust styles for form elements inside the oval */
-.main form {
-    text-align: center; /* Center align the form inside the oval */
-}
-
-
