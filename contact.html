@@ -1,83 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta  name="viewport" content="width=device-width, initial-scale=1">
-        <title>Contact Haley Tolar</title>
-        <link rel="icon" type="image/ico" href="img/wikipedia.ico">
-        <link rel="preconnect" href="https://fonts.googleapis.com"> 
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-        <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" href="css/normalize.css">
-        <link rel="stylesheet" type="text/css" href="css/style.production.css">
-    </head>
-    <body>
-        <header class="page-header">
-            <img src="/img/haley_tolar.svg" height="150" width="400" class="page-header__item" alt="logo">
-            <nav class="main-navigation page-header__item">
-                <ul role="menubar" class="navigation-list">
-                    <li role="presentation">
-                        <a href="index.html" role="menuitem" class="navigation-list__item navigation-list__item--active">Home</a>
-                    </li>
-                    <li role="presentation">
-                        <a href="about.html" role="menuitem" class="navigation-list__item" >About</a>
-                    </li>
-                    <li role="presentation">
-                        <a href="work.html" role="menuitem" class="navigation-list__item">Work</a> 
-                    </li>
-                    <li role="presentation">
-                        <a href="contact.html" role="menuitem" class="navigation-list__item">Contact</a> 
-                    </li>
-                </ul>
-            </nav>
-        </header>
-        <main class="main">
-            <h1>Contact</h1>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haley Tolar's Portfolio - Contact</title>
+    <link rel="icon" type="image/ico" href="img/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/style.production.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+</head>
+<body>
+    <header class="page-header">
+        <img src="img/haley_tolar.svg" height="150" width="400" class="page-header__item" alt="logo">
+        <nav class="main-navigation page-header__item">
+            <ul role="menubar" class="navigation-list">
+                <li role="presentation">
+                    <a href="index.html" role="menuitem" class="navigation-list__item">Home</a>
+                </li>
+                <li role="presentation">
+                    <a href="about.html" role="menuitem" class="navigation-list__item">About</a>
+                </li>
+                <li role="presentation">
+                    <a href="work.html" role="menuitem" class="navigation-list__item">Work</a>
+                </li>
+                <li role="presentation">
+                    <a href="contact.html" role="menuitem" class="navigation-list__item">Contact</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
 
-            <div>
-                <h2>Haley Tolar</h2>
-                <div>Collierville, TN</div>
-                <div>38017</div>
-            </div>
-            <div> 
-                <br>
-            <span>Tel </span><a href="tel:+1901-457-8805">+1 901-457-8805</a>
-                <br>
-            <span>Email </span><a href="mailto:Haleytolarwrites@outlook.com">Haleytolarwrites@outlook.com</a>
-                <br>
-            </div>
-            <div>
-                <h2>Leave me a message!</h2>
-            </div> 
-            <form action="contact" method="post" id="contact-form">
-                <div>
-                    <label class="standard-label" for="contact-email">E-mail: </label>
-                    <input type="email" id="contact-email" required>
+    <div class="content-box">
+        <div class="form-box">
+            <h1>Contact Me</h1>
+            <form action="your-form-handler-url" method="post">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
                 </div>
-                <br>
-                <div>
-                    <label class="standard-label" for="contact-tel">Telephone: </label>
-                    <input type="tel" id="contact-tel" pattern="\d{3}[\-]\d{3}[\-]\d{4}">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
                 </div>
-                <br>
-                <div>
-                    <label class="standard-label" for="contact-message">Message: </label>
-                    <textarea id="contact-message" required maxlength="240"></textarea>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="6" required></textarea>
                 </div>
-                <br>
-                <button type="submit" class="button">Send Message</button>
-
+                <button type="submit" class="submit-btn">Send Message</button>
             </form>
-        </main>
-        <footer class="page-footer">
-            <p>Find me on</p>
-            <div class="social-media">
-                <img src="img/github_icon.svg" alt="Github">
-                <img src="img/twitter_icon.svg" alt="Twitter">
-                <img src="img/linkedin_icon.svg" alt="LinkedIn">
-            </div>
-        </footer>
-        <script src="js/tota11y.min.js"></script>
-    </body>
+        </div>
 
+        <div class="contact-box">
+            <h1>Contact Information</h1>
+            <div class="contact-info">
+                <span>Tel</span>
+                <a href="tel:+1901-457-8805">+1 901-457-8805</a>
+                <br>
+                <span>Email</span>
+                <a href="mailto:Haleytolarwrites@outlook.com">Haleytolarwrites@outlook.com</a>
+                <br>
+            </div>
+        </div>
+    </div>
+
+    <footer class="page-footer">
+        <p class="footer-text">Find me on</p>
+        <div>
+            <img src="img/github_icon.svg" alt="Github">
+            <img src="img/linkedin_icon.svg" alt="LinkedIn">
+        </div>
+    </footer>
+
+    <script src="js/tota11y.min.js"></script>
+</body>
 </html>
