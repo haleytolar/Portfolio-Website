@@ -507,3 +507,13 @@ text-shadow: -1px -1px 0 var(--text-shadow-color),
          -1px 1px 0 var(--text-shadow-color),
          1px 1px 0 var(--text-shadow-color);
 }
+
+.social-icons {
+    display: flex;
+    justify-content: center; /* Center the icons horizontally */
+    gap: 10px; /* Space between the icons */
+}
+
+.social-icons a img {
+    vertical-align: middle; /* Ensure the icons are vertically aligned */
+}
