@@ -519,7 +519,6 @@ text-shadow: -1px -1px 0 var(--text-shadow-color),
          1px 1px 0 var(--text-shadow-color);
 }
 
-<<<<<<< HEAD
 .social-icons {
     display: flex;
     justify-content: center; /* Center the icons horizontally */
@@ -529,7 +528,7 @@ text-shadow: -1px -1px 0 var(--text-shadow-color),
 .social-icons a img {
     vertical-align: middle; /* Ensure the icons are vertically aligned */
 }
-=======
+
 .footer-text {
     color: white; 
     font-size: 30px; 
@@ -552,4 +551,3 @@ text-shadow: -1px -1px 0 var(--text-shadow-color),
 }
 
 
->>>>>>> gh-pages
