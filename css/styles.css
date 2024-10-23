@@ -11,7 +11,7 @@ html, body {
     font-weight: 900;
     font-size: 16px;
     line-height: 1.6;
-    background-image: url('/img/background.png'); /* Path to your image */
+    background-image: url('img/background.png'); /* Path to your image */
     background-size: cover; /* Ensure the background covers the entire viewport */
     background-position: center; /* Center the background image */
     background-repeat: no-repeat; /* Prevent the background from repeating */
