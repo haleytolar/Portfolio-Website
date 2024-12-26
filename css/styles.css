@@ -588,3 +588,157 @@ textarea {
     cursor: pointer;
 }
 
+/* General Media Queries */
+@media (max-width: 900px) {
+    .profile {
+        flex-direction: column; /* Stack elements vertically */
+        text-align: center; /* Center-align content */
+    }
+
+    .profile__portrait {
+        margin: 0 auto 20px; /* Center and add margin below */
+    }
+
+    .content-skills-container {
+        align-items: center; /* Center-align items */
+    }
+}
+
+@media (max-width: 768px) {
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr; /* Single column */
+        gap: 20px; /* Space between items */
+        padding: 15px; /* Padding for the grid container */
+    }
+
+    .grid__item {
+        text-align: center; /* Center align content */
+        padding: 15px; /* Internal spacing */
+        border: 1px solid #ddd; /* Optional: Add border for separation */
+        border-radius: 8px; /* Rounded corners */
+        background-color: #fff; /* Background color */
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    }
+
+    .page-header {
+        flex-direction: column; /* Stack header items */
+        text-align: center;
+    }
+
+    .navigation-list li {
+        display: block; /* Stack navigation items */
+        margin: 10px 0; /* Add spacing */
+    }
+
+    .profile {
+        flex-direction: row; /* Side by side */
+    }
+
+    .profile__portrait {
+        margin-right: 5px; /* Adjust spacing */
+    }
+
+    .page-header__item img {
+        max-width: 30px; /* Constrain size */
+        height: auto; /* Maintain ratio */
+        margin-right: 5px; /* Add space */
+    }
+
+    .page-footer {
+        text-align: center; /* Center content */
+    }
+
+    .page-footer img {
+        margin: 10px 0; /* Add spacing */
+    }
+}
+
+@media (max-width: 900px) {
+    .profile {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-content, .content-box {
+        padding: 15px; /* Reduce padding */
+    }
+
+    h1, .custom-h1 {
+        font-size: 1.5rem;
+
+    }
+
+    p, a {
+        font-size: 0.875rem; /* Adjust text size */
+    }
+    .profile__portrait {
+        width: 150px; 
+        height: 150px;
+        margin-top: 50px;/* Further reduce size */
+    }
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr); 
+        margin-right: 80px;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr; /* Single column */
+        gap: 20px; /* Space between items */
+        padding: 15px; /* Padding for the grid container */
+    }
+
+    .grid__item {
+        text-align: center; /* Center align content */
+        padding: 15px; /* Internal spacing */
+        border: 1px solid #ddd; /* Optional: Add border for separation */
+        border-radius: 8px; /* Rounded corners */
+        background-color: #fff; /* Background color */
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    }
+
+}
+
+/* Skills Grid Adjustments */
+@media screen and (max-width: 768px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr); 
+        margin-right: 80px;
+    }
+    .profile__portrait {
+        margin-top: 50px;/* Adjust margins */
+    }
+    .custom-h1 {
+        font-size: 1.75rem; /* Smaller heading size */
+    }
+
+    .main-content {
+        padding: 10px; /* Reduce padding */
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr; /* Single column */
+        gap: 20px; /* Space between items */
+        padding: 15px; /* Padding for the grid container */
+    }
+
+    .grid__item {
+        text-align: center; /* Center align content */
+        padding: 15px; /* Internal spacing */
+        border: 1px solid #ddd; /* Optional: Add border for separation */
+        border-radius: 8px; /* Rounded corners */
+        background-color: #fff; /* Background color */
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .skills-grid {
+        grid-template-columns: 1fr; /* Single column */
+    }
+    
+}
