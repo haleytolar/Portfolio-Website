@@ -6,8 +6,6 @@
     --header-bg: lightblue;
     --header-link-hover-color: #94754c;
     --headweight: 700;
-    --yellow: #ffc107;
-    --red: #e91e63;
 }
 
 html {
@@ -176,39 +174,41 @@ h1, .custom-h1 {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    max-width: 100%;
-    margin: 40px auto 0; /* MODIFIED: Reduced from 100px to 40px */
-    padding: 20px;
-    margin-left: 150px;
+    max-width: 90%; /* Reduced from 100% */
+    margin: 30px auto 0; /* Reduced top margin */
+    padding: 10px 20px; /* Reduced padding */
+    margin-left: auto;
+    margin-right: auto;
   }
   
-  .intro {
+.intro {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-right: 100px;
+    margin-right: 60px; /* Reduced from 100px */
     position: relative;
-  }
+}
   
-  .profile-text-container {
+.profile-text-container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 400px;
+    width: 300px; /* Medium size between original 350px and smaller 250px */
     margin-top: 5px;
-  }
+}
   
-  .profile__portrait {
-    width: 400px;
-    height: 400px;
+  
+.profile__portrait {
+    width: 300px; /* Medium size between original 350px and smaller 250px */
+    height: 300px; /* Medium size between original 350px and smaller 250px */
     border-radius: 12px;
-    margin-bottom: 20px;
+    margin-bottom: 15px; /* Reduced from 20px */
     object-fit: cover;
-  }
+}
   
   /* Hello-World typing animations */
   .custom-h1 {
-    font-size: 100px;
+    font-size: 90px;
     color: #333;
     font-family: 'JetBrains Mono', monospace;
     position: relative;
@@ -239,13 +239,13 @@ h1, .custom-h1 {
   /* JS-based paragraph typing animation styles */
   .typewriter-container {
     position: relative;
-    width: 400px;
+    width: 300px; /* Medium size between original and smaller */
     height: auto;
     overflow: hidden;
   }
   
   .typewriter-p {
-    font-size: 24px;
+    font-size: 20px; /* Medium size between original 22px and smaller 18px */
     font-weight: bold;
     font-family: 'JetBrains Mono', monospace;
     line-height: 1.6;
@@ -253,7 +253,7 @@ h1, .custom-h1 {
     letter-spacing: 0.1em;
     margin: 0;
     white-space: pre-wrap;
-    width: 400px;
+    width: 300px; /* Medium size between original and smaller */
     visibility: hidden; /* Hide original text */
     position: relative;
   }
@@ -262,8 +262,8 @@ h1, .custom-h1 {
     position: absolute;
     top: 0;
     left: 0;
-    width: 400px;
-    font-size: 24px;
+    width: 300px; /* Medium size between original and smaller */
+    font-size: 20px; /* Medium size between original 22px and smaller 18px */
     font-weight: bold;
     font-family: 'JetBrains Mono', monospace;
     line-height: 1.6;
@@ -283,16 +283,16 @@ h1, .custom-h1 {
   }
   
   .resume-link {
-    margin-top: 30px; /* MODIFIED: Reduced from 50px to 30px */
+    margin-top: 25px; /* Further reduced from 30px to 25px */
     display: inline-block;
     position: relative;
     background: none;
     border: 0;
-    padding: 1em 2.5em;
+    padding: 0.8em 2em; /* Reduced padding */
     color: #94754c;
     text-decoration: none;
     font-weight: 700;
-    font-size: 2rem;
+    font-size: 1.6rem; /* Reduced from 2rem */
     transition: transform 0.3s ease-in-out;
     /* This ensures the animation starts when the page loads */
     animation: trigger-on-load 0.1s;
@@ -331,6 +331,12 @@ h1, .custom-h1 {
     color: #94754c;
     transform: scale(1.1);
 }
+
+.section-1 {
+    margin-top: 15px !important; /* Reduced from default */
+    padding-top: 15px !important;
+}
+
 
 /* Animation keyframes for automatic border drawing */
 @keyframes border-top-right {
@@ -403,13 +409,11 @@ h1, .custom-h1 {
     from, to { opacity: 0; }
     50% { opacity: 1; }
 }
-.profile-text-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-}
 
-/* ----------- MEDIA QUERIES ----------- */
+.page-header {
+    padding: 10px 20px !important; /* Reduced top padding from 20px to 10px */
+    margin-top: 0 !important; /* Ensure no top margin */
+}
 
 /* Surface Pro 7 and similar devices (between 769px and 1024px) */
 @media screen and (min-width: 769px) and (max-width: 1024px) {
@@ -514,8 +518,9 @@ h1, .custom-h1 {
     .profile-about-container {
         flex-direction: column;
         align-items: center;
-        width: 100%;
+        width: 90%;
         padding: 10px;
+    
     }
     
     .intro {
@@ -635,7 +640,6 @@ section {
     }
 }
 
-
 /* Footer */
 .page-footer {
     display: flex;
@@ -660,7 +664,6 @@ section {
     transform: scale(1.2);
 }
 
-
 @keyframes slideInFromLeft {
     0% {
         opacity: 0;
@@ -683,7 +686,6 @@ section {
     }
 }
 
-
 /* Work heading animation styling */
 #work-head h1 {
     font-size: 60px;
@@ -695,6 +697,7 @@ section {
     overflow: hidden;
     white-space: nowrap;
     opacity: 0; /* Start hidden until triggered */
+    margin-top: 0%;
 }
 
 /* Class to be added by JavaScript when in viewport */
@@ -705,6 +708,10 @@ section {
       workTyping 1s steps(4) forwards, /* 'Work' has 4 characters */
       workBlink 0.75s step-end infinite,
       workHideCaret 0.1s forwards 1.5s;
+}
+
+#work-head {
+    margin-top: 0%;
 }
 
 /* Keyframes for Work heading typing animation */
@@ -1049,6 +1056,7 @@ section {
 }
 
 
+
   
 /* Fixed grid layout with exact 2-3-2 distribution and equal heights */
 .grid {
@@ -1256,19 +1264,20 @@ section {
 .skills-grid {
     position: relative;
     width: 800px;
-    height: 800px;
+    height: 700px; /* Reduced from 800px to 700px as in your example */
     padding: 40px;
     background-color: white;
     border-radius: 12px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
     animation: slideInFromRight 1s ease-out forwards;
-    margin-top: 100px;
-    margin-bottom: 100px; /* Equal space below to match top margin */
+    margin-top: 300px; /* Increased from 100px to 300px as requested */
+    margin-bottom: 100px;
     margin-left: auto;
     margin-right: auto;
     display: flex;
     justify-content: center;
     align-items: center;
+    z-index: 1; /* Ensuring proper stacking context */
 }
 
 .skills-grid h1 {
@@ -1391,6 +1400,8 @@ section {
         transform: rotate(315deg);
     }
 }
+
+
 
 /* Large screens */
 @media (min-width: 1200px) {
@@ -1532,7 +1543,6 @@ section {
     }
 }
 
-
 .link-container {
     display: flex;
     gap: 5px; /* Adjusts space between links */
@@ -1540,7 +1550,6 @@ section {
   }
 
 /* Cloud effect behind the text */
-
 
 /* Keyframes for the blinking effect */
 @keyframes cloudBlink {
@@ -1553,7 +1562,7 @@ section {
 }
 
 .section-1 {
-    margin-bottom: 100px; /* Adjust this value for more or less space */
+    margin-bottom: 200px; /* Adjust this value for more or less space */
 }
 
 /* Responsive divider */
@@ -2003,7 +2012,6 @@ textarea {
 }
 
 
-
 /* RESPONSIVE ADJUSTMENTS */
 
 /* Large screens */
@@ -2195,7 +2203,6 @@ textarea {
 /* Fix centering for section 1 at all dimensions */
 
 /* Base section styling */
-
 
 /* Profile container centering */
 .profile-about-container {
@@ -2400,5 +2407,4 @@ textarea {
         margin: 0 auto 20px; /* Center with margin auto */
     }
 }
-
 
