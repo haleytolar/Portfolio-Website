@@ -670,6 +670,20 @@ section {
     margin-top: 0%;
 }
 
+@media (max-width: 768px) {
+    #work-head h1 {
+        font-size: 2rem; /* Reduced from 60px */
+        width: 0; /* Start with zero width */
+        border-right: 0.07em solid transparent;
+    }
+}
+
+@media (max-width: 480px) {
+    #work-head h1 {
+        font-size: 1.8rem; /* Even smaller on very small screens */
+    }
+}
+
 
 #work-head h1.typing {
     opacity: 1;
@@ -864,25 +878,25 @@ section {
     width: 800px;
     height: 700px; 
     padding: 40px;
-    background-color: white;
+    background-color: transparent;
     border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    box-shadow: none;
     animation: slideInFromRight 1s ease-out forwards;
-    margin-top: 300px; /* Increased vertical space */
-    margin-bottom: 200px; /* Increased vertical space */
+    margin-top: 300px;
+    margin-bottom: 100px;
     margin-left: auto;
     margin-right: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1; 
-}
-
-.skills-grid h1 {
+ }
+ 
+ .skills-grid h1 {
     position: absolute;
     z-index: 10;
     padding: 30px;
-    background-color: white;
+    background-color: transparent; 
     border-radius: 50%;
     font-size: 4rem;
     text-align: center;
@@ -892,18 +906,18 @@ section {
     justify-content: center;
     align-items: center;
     margin: 0;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-}
-
-.skills-grid h1::before {  
+    box-shadow: none;
+ }
+ 
+ .skills-grid h1::before {  
     content: " ";
     display: block;
     position: absolute;
     top: 0; right: 0; bottom: 0; left: 0;
-    background: hsl(200 100% 80%);
+    background: hsl(200 100% 80%); /* Kept the blue background */
     z-index: -1;
     border-radius: 50%;
-}
+ }
 
 .skills-grid::after {
     content: "";
@@ -1374,27 +1388,27 @@ section {
 
 
 
-/* Large screens */
+
 @media (min-width: 1200px) {
     .skills-grid {
-        height: 850px; /* Taller on large screens */
-        margin-top: 120px; /* More top margin on large screens */
-        margin-bottom: 120px; /* Equal to top margin */
+        height: 850px; 
+        margin-top: 120px; 
+        margin-bottom: 120px; 
     }
     
-    /* Add equal vertical padding to the section containing the skills grid */
+
     section:has(.skills-grid) {
         padding-top: 80px;
         padding-bottom: 80px;
     }
 }
 
-/* Extra large screens */
+
 @media (min-width: 1600px) {
     .skills-grid {
-        height: 900px; /* Even taller on extra large screens */
-        margin-top: 150px; /* Even more top margin */
-        margin-bottom: 150px; /* Equal to top margin */
+        height: 900px; 
+        margin-top: 150px; 
+        margin-bottom: 150px; 
     }
     
     section:has(.skills-grid) {
@@ -1403,7 +1417,7 @@ section {
     }
 }
 
-/* Apply fixes only for screens below 768px */
+
 @media (max-width: 768px) {
     /* Section containing skills grid */
     section:has(.skills-grid) {
