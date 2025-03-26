@@ -12,19 +12,16 @@
     <link rel="stylesheet" type="text/css" href="css/style.production.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
     <style>
-        /* Enable smooth scrolling */
         html {
             scroll-behavior: smooth;
         }
         section {
             padding: 60px 20px;
-            min-height: 50vh; /* Ensure each section takes up full screen height */
+            min-height: 50vh; 
         }
     </style>
 </head>
 <body>
-
-
     <div class="wrapper">
         <header class="page-header">
             <img src="img/haley_tolar.svg" height="150" width="400" class="page-header__item" alt="logo">
@@ -43,15 +40,12 @@
             </nav>
         </header>
         
-        
-<section id="home" class="section-1">      
-            
+        <section id="home" class="section-1">
             <div class="profile-about-container">
-                <!-- Left side: Hello World + Resume Link -->
                 <div class="intro">
                     <h1 class="custom-h1 title" style="--n: 5; --typing-duration: 1s;">Hello</h1>
                     <h1 class="custom-h1 title world" style="--n: 5; --typing-duration: 1s; --first-line-typing-time: 1.2s;">World!</h1>
-                
+                    
                     <a href="img/Tolar-Haley Resume.docx" download="Tolar-Haley Resume.docx" class="resume-link">
                         Download Resume
                     </a>
@@ -61,143 +55,118 @@
                     <img src="img/headshot.jpg" class="profile__portrait" alt="A photograph of me">
                     <p class="typewriter-p" data-speed="50">My name is Haley. I'm a web developer from the United States.</p>
                 </div>
-            
-</section>
-
-
-<div class="divider"></div>   
-    
-
+            </div>
+        </section>
         
-<section class="content-container">
-  <div class="content-box">
-      <p>
-          I come from a dynamic background in the film industry, where creativity and storytelling played a huge role in shaping my perspective. However, I discovered a passion for web development that has driven me to transition into this ever-evolving field, where I now focus on advancing my career by crafting engaging digital experiences. My developer journey began with a comprehensive program at CareerFoundry, where I gained hands-on experience in web development technologies like JavaScript, TypeScript, React, Angular, NodeJS, and MongoDB. Through this immersive program, I also developed essential non-technical skills such as problem-solving, time management, and collaboration, which are critical in a fast-paced industry.
-           
-          Switching careers has been an exciting adventure, fueled by my love for learning and creativity. I thrive on challenges, continuously seeking opportunities to grow, refine my skills, and create user-centered solutions that leave a lasting impact.
-      </p>
-  </div>
-  
-  <h1 class="about-h1" id="typing-h1">About Me</h1>
-</section>
-
-
-<div class="divider"></div> 
-
-
-
-<section>
-  <div class="skills-grid">
-      <h1>Skills</h1>
-   
-      <div class="skill-title">HTML</div>
-      <div class="skill-title">CSS</div>
-      <div class="skill-title">JavaScript</div>
-      <div class="skill-title">Express</div>
-      <div class="skill-title">Node</div>
-      <div class="skill-title">REST API</div>
-      <div class="skill-title">React</div>
-      <div class="skill-title">Angular</div>
-  </div>
-</section>
-
-<!-- Better spacing between sections -->
-
-
-<!-- Work Section -->
-<section id="work" class="section section-3">
-  <div id="work-head">
-      <h1>Work</h1>
-  </div>
-
-    <div class="grid">
-      <!-- Pokédex Project -->
-      <div class="grid__item">
-        <img src="img/pokedex.png" alt="Pokédex Project" class="project-thumbnail">
-        <h2>Pokédex</h2>
-        <p>An application that retrieves information about Pokémon from an external API using JS, HTML, CSS, Bootstrap, jQuery, and ESlint</p>
-        <div class="project-links-container">
-          <a href="https://github.com/haleytolar/simple-js-app?tab=readme-ov-file" target="_blank">GitHub</a>
-          <a href="img/Case Study 3.pdf" target="_blank">Case Study</a>
-          <a href="https://haleytolar.github.io/simple-js-app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
-        </div>
-      </div>
-  
-      <!-- To-Do List Project -->
-      <div class="grid__item">
-        <img src="img/todo.png" alt="To-Do List Project" class="project-thumbnail">
-        <h2>To-Do List</h2>
-        <p>This is a to-do list app built with Redux, showcasing effective task management through actions and reducers.</p>
-        <div class="project-links-container">
-          <a href="https://github.com/haleytolar/Redux-To-Do-App" target="_blank">GitHub</a>
-        </div>
-      </div>
-  
-      <!-- MyFlix - MongoDB Project -->
-      <div class="grid__item">
-        <img src="img/mongo DB.png" alt="MyFlix MongoDB Project" class="project-thumbnail">
-        <h2>MyFlix - MongoDB</h2>
-        <p>This is a RESTful API for managing a movie database using MongoDB.</p>
-        <div class="project-links-container">
-          <a href="https://github.com/haleytolar/movie_api" target="_blank">GitHub</a>
-          <a href="img/Case Study.pdf" target="_blank">Case Study</a>
-          <a href="https://mflixxx.netlify.app/login" target="_blank" rel="noopener noreferrer">Live Demo</a>
-        </div>
-      </div>
-  
-      <!-- MyFlix - React Project -->
-      <div class="grid__item">
-        <img src="img/mflix.png" alt="MyFlix React Project" class="project-thumbnail">
-        <h2>MyFlix - React</h2>
-        <p>A React app for movie browsing, saving favorites, and profile management.</p>
-        <div class="project-links-container">
-          <a href="https://github.com/haleytolar/myFlix-client" target="_blank">GitHub</a>
-          <a href="img/Case Study.pdf" target="_blank">Case Study</a>
-          <a href="https://mflixxx.netlify.app/login" target="_blank" rel="noopener noreferrer">Live Demo</a>
-        </div>
-      </div>
-  
-      <!-- Meet App Project -->
-      <div class="grid__item">
-        <img src="img/meet.png" alt="Meet App Project" class="project-thumbnail">
-        <h2>Meet App</h2>
-        <p>A PWA that fetches real-time scheduling info from the Google Calendar API.</p>
-        <div class="project-links-container">
-          <a href="https://github.com/haleytolar/meet3" target="_blank">GitHub</a>
-          <a href="img/Case Study 2.pdf" target="_blank">Case Study</a>
-          <a href="https://haleytolar.github.io/meet3/" target="_blank" rel="noopener noreferrer">Live Demo</a>
-        </div>
-      </div>
-  
-      <!-- MyFlix - Angular Project -->
-      <div class="grid__item">
-        <img src="img/myflix-angular.png" alt="MyFlix Angular Project" class="project-thumbnail">
-        <h2>MyFlix - Angular</h2>
-        <p>This frontend for the MyFlix API offers dynamic and responsive UI with Angular.</p>
-        <div class="project-links-container">
-          <a href="https://github.com/haleytolar/myFlix-Angular-client2" target="_blank">GitHub</a>
-        </div>
-      </div>
-  
-      <!-- Chat App Project -->
-      <div class="grid__item">
-        <img src="img/chat.png" alt="Chat App Project" class="project-thumbnail">
-        <h2>Chat App</h2>
-        <p>A React Native chat app for instant messaging, image sharing, and location sharing.</p>
-        <div class="project-links-container">
-          <a href="https://github.com/haleytolar/Chat-App" target="_blank">GitHub</a>
-        </div>
-      </div>
-    </div>
-  </section>
-  
-
-
-
-
-  <!-- Section 4: Contact -->
-
-        <!-- Section 4: Contact -->
+        <div class="divider"></div>   
+        
+        <section class="content-container">
+            <div class="content-box">
+                <p>
+                    I come from a dynamic background in the film industry, where creativity and storytelling played a huge role in shaping my perspective. However, I discovered a passion for web development that has driven me to transition into this ever-evolving field, where I now focus on advancing my career by crafting engaging digital experiences. My developer journey began with a comprehensive program at CareerFoundry, where I gained hands-on experience in web development technologies like JavaScript, TypeScript, React, Angular, NodeJS, and MongoDB. Through this immersive program, I also developed essential non-technical skills such as problem-solving, time management, and collaboration, which are critical in a fast-paced industry.
+                     
+                    Switching careers has been an exciting adventure, fueled by my love for learning and creativity. I thrive on challenges, continuously seeking opportunities to grow, refine my skills, and create user-centered solutions that leave a lasting impact.
+                </p>
+            </div>
+            
+            <h1 class="about-h1" id="typing-h1">About Me</h1>
+        </section>
+        
+        <div class="divider"></div> 
+        
+        <section>
+            <div class="skills-grid">
+                <h1>Skills</h1>
+                <div class="skill-title">HTML</div>
+                <div class="skill-title">CSS</div>
+                <div class="skill-title">JavaScript</div>
+                <div class="skill-title">Express</div>
+                <div class="skill-title">Node</div>
+                <div class="skill-title">REST API</div>
+                <div class="skill-title">React</div>
+                <div class="skill-title">Angular</div>
+            </div>
+        </section>
+        
+        <section id="work" class="section section-3">
+            <div id="work-head">
+                <h1>Work</h1>
+            </div>
+            
+            <div class="grid">
+                <div class="grid__item">
+                    <img src="img/pokedex.png" alt="Pokédex Project" class="project-thumbnail">
+                    <h2>Pokédex</h2>
+                    <p>An application that retrieves information about Pokémon from an external API using JS, HTML, CSS, Bootstrap, jQuery, and ESlint</p>
+                    <div class="project-links-container">
+                        <a href="https://github.com/haleytolar/simple-js-app?tab=readme-ov-file" target="_blank">GitHub</a>
+                        <a href="img/Case Study 3.pdf" target="_blank">Case Study</a>
+                        <a href="https://haleytolar.github.io/simple-js-app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                    </div>
+                </div>
+                
+                <div class="grid__item">
+                    <img src="img/todo.png" alt="To-Do List Project" class="project-thumbnail">
+                    <h2>To-Do List</h2>
+                    <p>This is a to-do list app built with Redux, showcasing effective task management through actions and reducers.</p>
+                    <div class="project-links-container">
+                        <a href="https://github.com/haleytolar/Redux-To-Do-App" target="_blank">GitHub</a>
+                    </div>
+                </div>
+                
+                <div class="grid__item">
+                    <img src="img/mongo DB.png" alt="MyFlix MongoDB Project" class="project-thumbnail">
+                    <h2>MyFlix - MongoDB</h2>
+                    <p>This is a RESTful API for managing a movie database using MongoDB.</p>
+                    <div class="project-links-container">
+                        <a href="https://github.com/haleytolar/movie_api" target="_blank">GitHub</a>
+                        <a href="img/Case Study.pdf" target="_blank">Case Study</a>
+                        <a href="https://mflixxx.netlify.app/login" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                    </div>
+                </div>
+                
+                <div class="grid__item">
+                    <img src="img/mflix.png" alt="MyFlix React Project" class="project-thumbnail">
+                    <h2>MyFlix - React</h2>
+                    <p>A React app for movie browsing, saving favorites, and profile management.</p>
+                    <div class="project-links-container">
+                        <a href="https://github.com/haleytolar/myFlix-client" target="_blank">GitHub</a>
+                        <a href="img/Case Study.pdf" target="_blank">Case Study</a>
+                        <a href="https://mflixxx.netlify.app/login" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                    </div>
+                </div>
+                
+                <div class="grid__item">
+                    <img src="img/meet.png" alt="Meet App Project" class="project-thumbnail">
+                    <h2>Meet App</h2>
+                    <p>A PWA that fetches real-time scheduling info from the Google Calendar API.</p>
+                    <div class="project-links-container">
+                        <a href="https://github.com/haleytolar/meet3" target="_blank">GitHub</a>
+                        <a href="img/Case Study 2.pdf" target="_blank">Case Study</a>
+                        <a href="https://haleytolar.github.io/meet3/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                    </div>
+                </div>
+                
+                <div class="grid__item">
+                    <img src="img/myflix-angular.png" alt="MyFlix Angular Project" class="project-thumbnail">
+                    <h2>MyFlix - Angular</h2>
+                    <p>This frontend for the MyFlix API offers dynamic and responsive UI with Angular.</p>
+                    <div class="project-links-container">
+                        <a href="https://github.com/haleytolar/myFlix-Angular-client2" target="_blank">GitHub</a>
+                    </div>
+                </div>
+                
+                <div class="grid__item">
+                    <img src="img/chat.png" alt="Chat App Project" class="project-thumbnail">
+                    <h2>Chat App</h2>
+                    <p>A React Native chat app for instant messaging, image sharing, and location sharing.</p>
+                    <div class="project-links-container">
+                        <a href="https://github.com/haleytolar/Chat-App" target="_blank">GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
         <section id="contact" class="section section-4">
             <div class="contact-section">
                 <h1>Contact Me</h1>
@@ -225,8 +194,7 @@
                 </form>
             </div>
         </section>
-
-
+        
         <footer class="page-footer">
             <p class="footer-text">Find me on</p>
             <div class="social-icons">
@@ -238,6 +206,7 @@
                 </a>
             </div>
         </footer>
+    </div>
     
     <script src="js/tota11y.min.js"></script>
     <script src="js/content.js"></script>

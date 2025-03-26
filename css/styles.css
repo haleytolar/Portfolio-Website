@@ -130,43 +130,39 @@ h1, .custom-h1 {
     font-family: 'JetBrains Mono', monospace;
 }
 
-/* Profile container with slightly bigger proportions */
 .profile-about-container {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     width: 100%;
-    max-width: 1200px; /* Increased from default */
-    margin: 30px auto 0; /* More space at top */
-    padding: 15px 25px; /* Slightly more padding */
+    max-width: 1200px; 
+    margin: 30px auto 0; 
+    padding: 15px 25px; 
     margin-left: auto;
     margin-right: auto;
 }
 
-/* Intro section - slightly increased */
 .intro {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-right: 80px; /* Increased from 60px */
+    margin-right: 80px; 
     position: relative;
 }
 
-/* Profile text container - slightly increased */
 .profile-text-container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 350px; /* Increased from 300px */
-    margin-top: 10px; /* Increased from 5px */
+    width: 350px; 
+    margin-top: 10px; 
 }
 
-/* Profile portrait - slightly increased */
 .profile__portrait {
-    width: 350px; /* Increased from 300px */
-    height: 350px; /* Increased from 300px */
+    width: 350px; 
+    height: 350px; 
     border-radius: 12px;
-    margin-bottom: 20px; /* Increased from 15px */
+    margin-bottom: 20px; 
     object-fit: cover;
 }
 
@@ -199,17 +195,15 @@ h1, .custom-h1 {
         hello_hide_caret 0.1s forwards calc(var(--first-line-typing-time, 1.2s) + var(--typing-duration, 1s) + 0.5s);
 }
 
-/* Typography container sizing adjustments */
 .typewriter-container {
     position: relative;
-    width: 350px; /* Increased from 300px */
+    width: 350px; 
     height: auto;
     overflow: hidden;
 }
 
-/* Paragraph text sizing */
 .typewriter-p {
-    font-size: 22px; /* Increased from 20px */
+    font-size: 22px; 
     font-weight: bold;
     font-family: 'JetBrains Mono', monospace;
     line-height: 1.6;
@@ -217,18 +211,17 @@ h1, .custom-h1 {
     letter-spacing: 0.1em;
     margin: 0;
     white-space: pre-wrap;
-    width: 350px; /* Increased from 300px */
+    width: 350px; 
     visibility: hidden;
     position: relative;
 }
 
-/* Typed text sizing */
 .typed-text {
     position: absolute;
     top: 0;
     left: 0;
-    width: 350px; /* Increased from 300px */
-    font-size: 22px; /* Increased from 20px */
+    width: 350px; 
+    font-size: 22px; 
     font-weight: bold;
     font-family: 'JetBrains Mono', monospace;
     line-height: 1.6;
@@ -863,7 +856,7 @@ section {
     display: block;
     position: absolute;
     top: 0; right: 0; bottom: 0; left: 0;
-    background: hsl(200 100% 80%); /* Kept the blue background */
+    background: hsl(200 100% 80%); 
     z-index: -1;
     border-radius: 50%;
  }
@@ -892,9 +885,9 @@ section {
     border-top: 6px solid transparent;
     border-bottom: 6px solid transparent;
     border-left: 12px solid black;
-    top: calc(50% - 6px); /* Center vertically */
-    left: calc(50% + 100px + 100px); /* Center + heading radius + line length */
-    transform-origin: -200px 6px; /* -(heading radius + line length) + half triangle height */
+    top: calc(50% - 6px); 
+    left: calc(50% + 100px + 100px); 
+    transform-origin: -200px 6px;
     z-index: 15;
     animation: rotateArrow 16s linear infinite;
     pointer-events: none;
@@ -963,8 +956,8 @@ section {
 @media (min-width: 1600px) {
     .skills-grid {
         height: 900px;
-        margin-top: 500px; /* Even more top margin */
-        margin-bottom: 400px; /* Even more bottom margin */
+        margin-top: 500px; 
+        margin-bottom: 400px; 
     }
 }
 
@@ -1368,7 +1361,6 @@ section {
 
 
 @media (max-width: 768px) {
-    /* Section containing skills grid */
     section:has(.skills-grid) {
         padding-top: 15px;
         padding-bottom: 15px;
@@ -1377,10 +1369,10 @@ section {
     
     .skills-grid {
         width: 500px;
-        height: 400px; /* Reduced height */
+        height: 400px; 
         padding: 20px;
-        margin-top: 50px; /* Increased from 15px for better spacing */
-        margin-bottom: 50px; /* Equal to top margin */
+        margin-top: 50px; 
+        margin-bottom: 50px; 
     }
 
     .skills-grid h1 {
@@ -1390,8 +1382,8 @@ section {
     }
     
     .skills-grid::after {
-        width: 80px; /* Shorter for smaller container */
-        margin-left: 75px; /* Half the width of the heading (150px/2) */
+        width: 80px; 
+        margin-left: 75px; 
         transform-origin: -75px center;
     }
     
@@ -1408,13 +1400,12 @@ section {
 }
 
 @media (max-width: 520px) {
-    /* Further reduce height and spacing for mobile */
     .skills-grid {
         width: 320px;
-        height: 280px; /* Even smaller height */
+        height: 280px; 
         padding: 10px;
-        margin-top: 30px; /* Increased from 10px for better spacing */
-        margin-bottom: 30px; /* Equal to top margin */
+        margin-top: 30px; 
+        margin-bottom: 30px; 
     }
 
     .skills-grid h1 {
@@ -1442,14 +1433,13 @@ section {
     }
 }
 
-/* Very small devices */
 @media (max-width: 375px) {
     .skills-grid {
         width: 280px;
-        height: 240px; /* Minimal height */
+        height: 240px; 
         padding: 8px;
-        margin-top: 20px; /* Increased from 5px for better spacing */
-        margin-bottom: 20px; /* Equal to top margin */
+        margin-top: 20px; 
+        margin-bottom: 20px; 
     }
     
     .skills-grid h1 {
@@ -1479,13 +1469,10 @@ section {
 
 .link-container {
     display: flex;
-    gap: 5px; /* Adjusts space between links */
-    flex-wrap: wrap; /* Allows links to wrap on smaller screens */
+    gap: 5px; 
+    flex-wrap: wrap; 
   }
 
-/* Cloud effect behind the text */
-
-/* Keyframes for the blinking effect */
 @keyframes cloudBlink {
     0%, 100% {
         opacity: 0;
@@ -1496,31 +1483,28 @@ section {
 }
 
 .section-1 {
-    margin-bottom: 200px; /* Adjust this value for more or less space */
+    margin-bottom: 200px; 
 }
 
-/* Responsive divider */
 .divider {
-    margin: 150px 40px; /* Original spacing for desktop */
+    margin: 150px 40px; 
 }
 
 @media screen and (max-width: 768px) {
     .divider {
-        margin: 10px; /* Reduced spacing for tablets */
+        margin: 10px; 
     }
 }
 
-/* Mobile devices */
 @media screen and (max-width: 480px) {
     .divider {
-        margin: 10px; /* Much smaller spacing for mobile */
+        margin: 10px; 
     }
 }
 
-/* Very small devices */
 @media screen and (max-width: 320px) {
     .divider {
-        margin: 10px; /* Minimal spacing for very small screens */
+        margin: 10px; 
     }
 }
 
@@ -1530,12 +1514,11 @@ section {
     align-items: center;
     padding: 50px 20px;
     border-radius: 8px;
-    background-color: transparent; /* Changed to transparent */
+    background-color: transparent; 
     position: relative;
     overflow: hidden;
 }
 
-/* Remove the background bubbles */
 .section-4::before,
 .section-4::after {
     display: none;
@@ -1547,12 +1530,11 @@ section {
     align-items: center;
     padding: 50px 20px;
     border-radius: 8px;
-    background-color: transparent; /* Changed to transparent */
+    background-color: transparent; 
     position: relative;
     overflow: hidden;
 }
 
-/* Add JetBrains Mono font import */
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap');
 
 .section-4 {
@@ -1563,7 +1545,7 @@ section {
     border-radius: 8px;
     background-color: transparent;
     position: relative;
-    overflow: visible; /* Makes sure nothing gets cut off */
+    overflow: visible; 
 }
 
 .contact-section {
@@ -1573,7 +1555,6 @@ section {
     max-width: 1000px;
 }
 
-/* Contact Me heading - initial state with no animation */
 .contact-section h1 {
     font-size: 3.5rem;
     color: black;
@@ -1584,21 +1565,19 @@ section {
     display: inline-block;
     left: 50%;
     transform: translateX(-50%);
-    /* Animation setup but not active yet */
     overflow: hidden;
     white-space: nowrap;
-    width: 0; /* Start with zero width */
+    width: 0; 
     border-right: 0.07em solid transparent;
 }
 
-/* Active class for Contact Me that will be added when scrolled into view */
 .contact-section h1.typing-active {
-    width: 250px; /* Final width after typing */
+    width: 250px; 
     animation: 
       contactBlink 0.75s step-end infinite,
       contactHideCaret 0.1s forwards 2.3s;
     border-right: 0.07em solid black;
-    transition: width 1.8s steps(10); /* Typing effect */
+    transition: width 1.8s steps(10); 
 }
 
 .contact-section form {
@@ -1614,7 +1593,6 @@ section {
     font-family: 'JetBrains Mono', monospace;
 }
 
-/* Hide all decorative elements */
 .form-decoration {
     display: none;
 }
@@ -1637,7 +1615,6 @@ section {
     font-family: 'JetBrains Mono', monospace;
 }
 
-/* Remove all icon elements */
 .form-group label::before,
 #message-label::before,
 #email-label::before,
@@ -1672,7 +1649,7 @@ section {
 textarea {
     resize: vertical;
     min-height: 120px;
-    border-radius: 4px !important; /* Match other input elements */
+    border-radius: 4px !important; 
 }
 
 .submit-btn {
@@ -1693,7 +1670,6 @@ textarea {
     font-family: 'JetBrains Mono', monospace;
 }
 
-/* Remove all animation elements */
 .submit-btn::before {
     display: none;
 }
@@ -1710,7 +1686,6 @@ textarea {
     background-color: #7c6341;
 }
 
-/* Contact Info */
 .contact-info {
     text-align: center;
     margin-top: 30px;
@@ -1721,7 +1696,6 @@ textarea {
     backdrop-filter: none;
 }
 
-/* Email heading - initial state with no animation */
 .contact-info-heading {
     font-weight: bold;
     color: black;
@@ -1729,21 +1703,19 @@ textarea {
     margin-right: 10px;
     position: relative;
     background: transparent;
-    /* Animation setup but not active yet */
     overflow: hidden;
     white-space: nowrap;
-    width: 0; /* Start with zero width */
+    width: 0; 
     border-right: 0.07em solid transparent;
 }
 
-/* Active class for Email that will be added when scrolled into view */
 .contact-info-heading.typing-active {
-    width: 80px; /* Final width after typing */
+    width: 80px; 
     animation: 
       emailBlink 0.75s step-end infinite,
       emailHideCaret 0.1s forwards 1.5s;
     border-right: 0.07em solid black;
-    transition: width 1.2s steps(5) 2.5s; /* Delayed typing effect */
+    transition: width 1.2s steps(5) 2.5s; 
 }
 
 .contact-info a {
@@ -1779,7 +1751,6 @@ textarea {
     transform: scaleX(1);
 }
 
-/* Animation for fade in */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -1791,37 +1762,31 @@ textarea {
     }
 }
 
-/* Footer Styles */
 .page-footer {
     text-align: center;
 }
 
-/* Footer text - initial state with no animation */
 .footer-text {
     font-family: 'JetBrains Mono', monospace;
     color: #333;
     font-size: 1.2rem;
-    /* Animation setup but not active yet */
     overflow: hidden;
     white-space: nowrap;
-    width: 0; /* Start with zero width */
+    width: 0; 
     border-right: 0.07em solid transparent;
     margin-bottom: 10px;
     display: inline-block;
 }
 
-/* Active class for Footer text that will be added when scrolled into view */
-/* Fix for the "Find me on" text being cut off */
 .footer-text.typing-active {
-    width: 130px; /* Increased from 100px to accommodate the full text */
+    width: 130px;
     animation: 
       footerBlink 0.75s step-end infinite,
       footerHideCaret 0.1s forwards 1.5s;
     border-right: 0.07em solid black;
-    transition: width 1.2s steps(10); /* Typing effect */
+    transition: width 1.2s steps(10); 
 }
 
-/* Animation keyframes for blinking cursors */
 @keyframes contactBlink {
     from, to { border-color: transparent; }
     50% { border-color: black; }
@@ -1855,7 +1820,6 @@ textarea {
     }
 }
 
-/* Responsive styles */
 @media (max-width: 768px) {
     .contact-section form {
         padding: 30px;
@@ -1866,7 +1830,7 @@ textarea {
     }
     
     .contact-section h1.typing-active {
-        width: 200px; /* Smaller width for smaller screens */
+        width: 200px; 
     }
 }
 
@@ -1880,7 +1844,7 @@ textarea {
     }
     
     .contact-section h1.typing-active {
-        width: 180px; /* Even smaller width for mobile */
+        width: 180px; 
     }
     
     .submit-btn {
@@ -1934,21 +1898,16 @@ textarea {
     cursor: pointer;
 }
 
-/* General Centering */
 .wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 100vh; /* Ensure content is vertically centered */
+    min-height: 100vh; 
     margin: 0 auto;
-    padding: 15px; /* Add some padding */
+    padding: 15px; 
 }
 
-
-/* RESPONSIVE ADJUSTMENTS */
-
-/* Large screens */
 @media (min-width: 1200px) {
     section {
         padding: 80px 20px;
@@ -1968,7 +1927,6 @@ textarea {
     }
 }
 
-/* Tablets and smaller laptops */
 @media screen and (max-width: 1024px) {
     section {
         padding: 50px 20px;
@@ -1993,7 +1951,7 @@ textarea {
     }
 }
 
-/* Tablets */
+
 @media screen and (max-width: 768px) {
     section {
         padding: 40px 20px;
@@ -2026,7 +1984,7 @@ textarea {
     }
 }
 
-/* Mobile devices */
+
 @media screen and (max-width: 480px) {
     section {
         padding: 30px 15px;
@@ -2063,7 +2021,7 @@ textarea {
     }
 }
 
-/* Very small devices */
+
 @media screen and (max-width: 320px) {
     section {
         padding: 25px 10px;
@@ -2091,9 +2049,9 @@ textarea {
     }
 }
 
-/* Add specific media query for screen widths between 1020px and 1068px */
+
 @media screen and (min-width: 1020px) and (max-width: 1080px) {
-    /* Modify profile-about-container for single column layout */
+
     .profile-about-container {
         flex-direction: column;
         align-items: center;
@@ -2104,12 +2062,11 @@ textarea {
         max-width: 600px;
     }
     
-    /* Hide the intro section to give more space */
+
     .intro {
         display: none;
     }
     
-    /* Center and size the profile text container */
     .profile-text-container {
         align-items: center;
         margin: 0 auto;
@@ -2117,14 +2074,12 @@ textarea {
         max-width: 400px;
     }
     
-    /* Adjust image size to prevent overflow */
     .profile__portrait {
         width: 350px;
         height: 350px;
         margin: 0 auto 20px;
     }
-    
-    /* Ensure text is properly centered */
+
     .typewriter-container,
     .typewriter-p,
     .typed-text {
@@ -2134,11 +2089,6 @@ textarea {
     }
 }
 
-/* Fix centering for section 1 at all dimensions */
-
-/* Base section styling */
-
-/* Profile container centering */
 .profile-about-container {
     display: flex;
     justify-content: center;
@@ -2147,11 +2097,10 @@ textarea {
     width: 100%;
     margin: 40px auto;
     padding: 0 20px;
-    /* Remove margin-left that was causing uneven spacing */
     margin-left: auto;
 }
 
-/* Intro and profile-text-container spacing */
+
 .intro {
     display: flex;
     flex-direction: column;
@@ -2168,14 +2117,14 @@ textarea {
     margin-top: 5px;
 }
 
-/* Responsive adjustments */
+
 @media screen and (min-width: 1400px) {
     .profile-about-container {
         padding: 0 40px;
     }
 }
 
-/* Large screens (1200px-1399px) */
+
 @media screen and (min-width: 1200px) and (max-width: 1399px) {
     .profile-about-container {
         padding: 0 30px;
@@ -2183,7 +2132,7 @@ textarea {
     }
 }
 
-/* Medium screens (1069px-1199px) */
+
 @media screen and (min-width: 1069px) and (max-width: 1199px) {
     .profile-about-container {
         padding: 0 30px;
@@ -2195,9 +2144,9 @@ textarea {
     }
 }
 
-/* Problem range (1020px-1068px) */
+
 @media screen and (min-width: 1020px) and (max-width: 1068px) {
-    /* Modify profile-about-container for single column layout */
+
     .profile-about-container {
         flex-direction: column;
         align-items: center;
@@ -2209,12 +2158,12 @@ textarea {
         padding: 0 20px;
     }
     
-    /* Hide the intro section to give more space */
+
     .intro {
         display: none;
     }
     
-    /* Center and size the profile text container */
+
     .profile-text-container {
         align-items: center;
         margin: 0 auto;
@@ -2222,14 +2171,14 @@ textarea {
         max-width: 400px;
     }
     
-    /* Adjust image size to prevent overflow */
+
     .profile__portrait {
         width: 350px;
         height: 350px;
         margin: 0 auto 20px;
     }
     
-    /* Ensure text is properly centered */
+
     .typewriter-container,
     .typewriter-p,
     .typed-text {
@@ -2239,9 +2188,9 @@ textarea {
     }
 }
 
-/* Surface Pro 7 and similar devices (between 769px and 1019px) */
+
 @media screen and (min-width: 769px) and (max-width: 1019px) {
-    /* Keep the profile-about-container but modify its layout */
+
     .profile-about-container {
         justify-content: center;
         margin: 40px auto;
@@ -2250,12 +2199,12 @@ textarea {
         max-width: 700px;
     }
     
-    /* Hide the intro section which contains Hello World and resume link */
+
     .intro {
         display: none;
     }
     
-    /* Center the profile-text-container */
+   
     .profile-text-container {
         align-items: center;
         margin: 0 auto;
@@ -2263,7 +2212,7 @@ textarea {
         max-width: 400px;
     }
     
-    /* Make sure text is centered */
+   
     .typewriter-container,
     .typewriter-p,
     .typed-text {
@@ -2272,7 +2221,7 @@ textarea {
         text-align: center;
     }
     
-    /* Ensure portrait is properly sized */
+    
     .profile__portrait {
         width: 350px;
         height: 350px;
@@ -2280,7 +2229,7 @@ textarea {
     }
 }
 
-/* Tablet devices (768px and below) */
+
 @media screen and (max-width: 768px) {
     .profile-about-container {
         justify-content: center;
@@ -2296,7 +2245,7 @@ textarea {
         align-items: center;
     }
     
-    /* Center profile text container */
+   
     .profile-text-container {
         align-items: center;
         margin: 0 auto;
@@ -2305,13 +2254,13 @@ textarea {
     }
 }
 
-/* Mobile devices (480px and below) */
+
 @media screen and (max-width: 480px) {
     .section-1 {
         padding: 40px 15px;
     }
     
-    /* Further center everything */
+   
     .profile-about-container {
         flex-direction: column;
         align-items: center;
@@ -2331,14 +2280,14 @@ textarea {
         max-width: 320px;
         display: flex;
         flex-direction: column;
-        align-items: center; /* Center the content */
+        align-items: center; 
     }
     
-    /* Center portrait and make it responsive */
+
     .profile__portrait {
         width: 300px;
         height: 300px;
-        margin: 0 auto 20px; /* Center with margin auto */
+        margin: 0 auto 20px; 
     }
 }
 
