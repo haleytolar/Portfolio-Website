@@ -43,7 +43,6 @@ body, html {
     background: transparent;
 }
 
-
 @keyframes slideInFromTop {
     0% {
         opacity: 0;
@@ -58,6 +57,7 @@ body, html {
 .page-header__item {
     animation: slideInFromTop 0.8s ease-out forwards;
 }
+
 .navigation-list li {
     display: inline-block;
     margin-left: 15px;
@@ -67,7 +67,6 @@ body, html {
     opacity: 0; 
     animation: slideInFromTop 0.8s ease-out forwards; 
 }
-
 
 .navigation-list li:nth-child(1) {
     animation-delay: 0.2s;
@@ -115,7 +114,6 @@ p {
     font-size: 20px;
 }
 
-
 a {
     text-decoration: none;
     font-family: 'JetBrains Mono', monospace;
@@ -125,16 +123,6 @@ a {
     font-size: 30px;
 }
 
-
-.intro {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-right: 100px; 
-    position: relative;
-}
-
-
 h1, .custom-h1 {
     font-weight: bold;
     color: #333;
@@ -142,43 +130,46 @@ h1, .custom-h1 {
     font-family: 'JetBrains Mono', monospace;
 }
 
-
+/* Profile container with slightly bigger proportions */
 .profile-about-container {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    width: 100%; 
-    margin: 20px auto 0; 
-    padding: 10px 20px; 
+    width: 100%;
+    max-width: 1200px; /* Increased from default */
+    margin: 30px auto 0; /* More space at top */
+    padding: 15px 25px; /* Slightly more padding */
     margin-left: auto;
     margin-right: auto;
-  }
-  
+}
+
+/* Intro section - slightly increased */
 .intro {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin-right: 60px; 
+    margin-right: 80px; /* Increased from 60px */
     position: relative;
 }
-  
+
+/* Profile text container - slightly increased */
 .profile-text-container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    width: 300px; 
-    margin-top: 5px;
+    width: 350px; /* Increased from 300px */
+    margin-top: 10px; /* Increased from 5px */
 }
-  
-  
+
+/* Profile portrait - slightly increased */
 .profile__portrait {
-    width: 300px; 
-    height: 300px; 
+    width: 350px; /* Increased from 300px */
+    height: 350px; /* Increased from 300px */
     border-radius: 12px;
-    margin-bottom: 15px; 
+    margin-bottom: 20px; /* Increased from 15px */
     object-fit: cover;
 }
-  
+
 .custom-h1 {
     font-size: 90px;
     color: #333;
@@ -190,34 +181,35 @@ h1, .custom-h1 {
     overflow: hidden;
     white-space: nowrap;
 }
-  
+
 .title {
     border-right: 0.03em solid #333;
     animation: 
-      hello_typing var(--typing-duration, 1s) steps(var(--n, 5)) forwards,
-      hello_blink 0.75s step-end infinite,
-      hello_hide_caret 0.1s forwards calc(var(--typing-duration, 1s) + 0.5s);
+        hello_typing var(--typing-duration, 1s) steps(var(--n, 5)) forwards,
+        hello_blink 0.75s step-end infinite,
+        hello_hide_caret 0.1s forwards calc(var(--typing-duration, 1s) + 0.5s);
 }
-  
+
 .world {
     opacity: 0;
     border-right: 0.03em solid #333;
     animation: 
-      hello_typing var(--typing-duration, 1s) steps(var(--n, 5)) forwards var(--first-line-typing-time, 1.2s),
-      hello_blink 0.75s step-end infinite var(--first-line-typing-time, 1.2s),
-      hello_hide_caret 0.1s forwards calc(var(--first-line-typing-time, 1.2s) + var(--typing-duration, 1s) + 0.5s);
+        hello_typing var(--typing-duration, 1s) steps(var(--n, 5)) forwards var(--first-line-typing-time, 1.2s),
+        hello_blink 0.75s step-end infinite var(--first-line-typing-time, 1.2s),
+        hello_hide_caret 0.1s forwards calc(var(--first-line-typing-time, 1.2s) + var(--typing-duration, 1s) + 0.5s);
 }
-  
 
+/* Typography container sizing adjustments */
 .typewriter-container {
     position: relative;
-    width: 300px; 
+    width: 350px; /* Increased from 300px */
     height: auto;
     overflow: hidden;
 }
-  
+
+/* Paragraph text sizing */
 .typewriter-p {
-    font-size: 20px; 
+    font-size: 22px; /* Increased from 20px */
     font-weight: bold;
     font-family: 'JetBrains Mono', monospace;
     line-height: 1.6;
@@ -225,17 +217,18 @@ h1, .custom-h1 {
     letter-spacing: 0.1em;
     margin: 0;
     white-space: pre-wrap;
-    width: 300px; 
-    visibility: hidden; 
+    width: 350px; /* Increased from 300px */
+    visibility: hidden;
     position: relative;
 }
-  
+
+/* Typed text sizing */
 .typed-text {
     position: absolute;
     top: 0;
     left: 0;
-    width: 300px; 
-    font-size: 20px; 
+    width: 350px; /* Increased from 300px */
+    font-size: 22px; /* Increased from 20px */
     font-weight: bold;
     font-family: 'JetBrains Mono', monospace;
     line-height: 1.6;
@@ -244,7 +237,7 @@ h1, .custom-h1 {
     white-space: pre-wrap;
     overflow: hidden;
 }
-  
+
 .cursor {
     display: inline-block;
     width: 0.07em;
@@ -253,7 +246,7 @@ h1, .custom-h1 {
     position: absolute;
     animation: blink-cursor 0.75s step-end infinite;
 }
-  
+
 .resume-link {
     margin-top: 25px; 
     display: inline-block;
@@ -296,7 +289,6 @@ h1, .custom-h1 {
     animation: border-bottom-left 3s 1.5s forwards;
 }
 
-
 .resume-link:hover {
     color: #94754c;
     transform: scale(1.1);
@@ -306,8 +298,6 @@ h1, .custom-h1 {
     margin-top: 15px !important; 
     padding-top: 15px !important;
 }
-
-
 
 @keyframes border-top-right {
     0% {
@@ -351,7 +341,6 @@ h1, .custom-h1 {
     }
 }
 
-
 @keyframes hello_typing {
     from {
         width: 0;
@@ -374,7 +363,6 @@ h1, .custom-h1 {
     }
 }
 
-
 @keyframes blink-cursor {
     from, to { opacity: 0; }
     50% { opacity: 1; }
@@ -383,45 +371,6 @@ h1, .custom-h1 {
 .page-header {
     padding: 10px 20px !important; 
     margin-top: 0 !important; 
-}
-
-
-@media screen and (min-width: 769px) and (max-width: 1024px) {
-   
-    .profile-about-container {
-        justify-content: center;
-        margin: 40px auto;
-        padding: 20px;
-    }
-    
-
-    .intro {
-        display: none;
-    }
-    
-
-    .profile-text-container {
-        align-items: center;
-        margin: 0 auto;
-        width: 100%;
-        max-width: 400px;
-    }
-    
-
-    .typewriter-container,
-    .typewriter-p,
-    .typed-text {
-        width: 100%;
-        max-width: 400px;
-        text-align: center;
-    }
-    
-
-    .profile__portrait {
-        width: 350px;
-        height: 350px;
-        margin: 0 auto 20px;
-    }
 }
 
 
@@ -672,15 +621,15 @@ section {
 
 @media (max-width: 768px) {
     #work-head h1 {
-        font-size: 2rem; /* Reduced from 60px */
-        width: 0; /* Start with zero width */
+        font-size: 2rem; 
+        width: 0; 
         border-right: 0.07em solid transparent;
     }
 }
 
 @media (max-width: 480px) {
     #work-head h1 {
-        font-size: 1.8rem; /* Even smaller on very small screens */
+        font-size: 1.8rem; 
     }
 }
 
