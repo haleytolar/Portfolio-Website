@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex Case Study | Haley Tolar</title>
+    <link rel="icon" type="image/ico" href="img/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/style.production.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/case-studies.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="page-header">
+            <img src="img/haley_tolar.svg" height="150" width="400" class="page-header__item" alt="logo">
+            <nav class="main-navigation page-header__item">
+                <ul role="menubar" class="navigation-list">
+                    <li role="presentation">
+                        <a href="index.html#home" role="menuitem" class="navigation-list__item">Home</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="index.html#work" role="menuitem" class="navigation-list__item">Work</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="index.html#contact" role="menuitem" class="navigation-list__item">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main class="case-study">
+            <header class="case-study-header">
+                <a href="index.html#work" class="back-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M15 18l-6-6 6-6"/>
+                    </svg>
+                    Portfolio
+                </a>
+                <h1 class="text-2xl font-bold">Pokédex Project</h1>
+            </header>
+            
+           
+            <section class="project-overview">
+                <h2>Project Overview</h2>
+                <img src="img/pokedex.png" alt="Pokédex Project Screenshot" class="case-study-main-image">
+                <p>The Pokédex application is a dynamic, client-side web application that provides users with information about different Pokémon. Leveraging the external <a href="https://pokeapi.co/" target="_blank">PokéAPI</a>  This app presents a user-friendly interface where users can browse through a list of 150 Pokémon and view detailed information about each one.</p>
+                <p>This project showcases my ability to create compelling, responsive web applications that interact with external APIs. It demonstrates my proficiency in HTML, CSS, JavaScript, and various libraries and frameworks including Bootstrap and jQuery.</p>
+            </section>
+            
+           
+            <section class="project-goals">
+                <h2>Project Goals</h2>
+                <ul>
+                    <li>Create a responsive, user-friendly application that works across all devices</li>
+                    <li>Implement effective data loading from an external API</li>
+                    <li>Develop a clean, intuitive UI that responds to user interaction</li>
+                    <li>Implement search functionality to easily find specific Pokémon</li>
+                    <li>Practice modern JavaScript techniques including IIFE pattern and promises</li>
+                </ul>
+            </section>
+            
+        
+            <section class="technical-details">
+                <h2>Technical Details</h2>
+                <h3>Tools & Technologies Used</h3>
+                <div class="tech-stack">
+                    <div class="tech-item">HTML5</div>
+                    <div class="tech-item">CSS3</div>
+                    <div class="tech-item">JavaScript</div>
+                    <div class="tech-item">Bootstrap</div>
+                    <div class="tech-item">jQuery</div>
+                    <div class="tech-item">ESLint</div>
+                    <div class="tech-item">PokéAPI</div>
+                </div>
+                
+                <h3>API Integration</h3>
+                <p>The application integrates with the PokéAPI to fetch data about 150 different Pokémon. I implemented an IIFE (Immediately Invoked Function Expression) pattern to create a repository that manages the data fetching, processing, and display of Pokémon information.</p>
+                
+                <div class="code-example">
+                    <h4>Key Code Implementation</h4>
+                    <pre><code>
+let pokemonRepository = (function () {
+  let pokemonList = [];
+  let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+  
+  function getAll() {
+    return pokemonList;
+  }
+  
+  function showModal(pokemon) {
+    const modalBody = $(".modal-body");
+    const modalTitle = $(".modal-title");
+    const modalHeader = $(".modal-header");
+    modalTitle.empty();
+    modalBody.empty();
+    const titleElement = document.createElement("h1");
+    titleElement.innerText = pokemon.name;
+    const contentElement = document.createElement("p");
+    contentElement.innerText = "Height: " + pokemon.height + "m";
+    const myImage = document.createElement("img");
+    myImage.src = pokemon.imageUrl;
+    modalBody.append(myImage);
+    modalBody.append(titleElement);
+    modalBody.append(contentElement);
+  }
+  
+  function loadDetails(item) {
+    const url = item.detailsUrl;
+    return fetch(url).then(function (response) {
+      return response.json();
+    }).then(function (details) {
+      //Details to the item
+      item.imageUrl = details.sprites.front_default;
+      item.height = details.height;
+      item.types = details.types;
+    }).catch(function (e) {
+      console.error(e);
+    });
+  }
+  
+  function showDetails(pokemon) {
+    loadDetails(pokemon).then(function () {
+      showModal(pokemon);
+    });
+  }
+  
+  // Other functions and initialization code...
+  
+  return {
+    getAll: getAll,
+    add: add,
+    addListItem: addListItem,
+    loadList: loadList,
+    loadDetails: loadDetails,
+  };
+})();</code></pre>
+                </div>
+            
+                <h3>Search Functionality</h3>
+                <p>I implemented a search feature that allows users to filter Pokémon by name, enhancing the user experience:</p>
+                
+                <div class="code-example">
+                    <h4>Search Implementation</h4>
+                    <pre><code>
+// handle search
+const handleSearch = (e) => {
+  e.preventDefault();
+  const searchInput = document.getElementById("search-input").value;
+  //clear pokemon list
+  const pokemonListContainer = document.querySelector(".pokemon-list");
+  pokemonListContainer.innerHTML = null;
+  const pokemons = [...pokemonRepository.getAll()];
+  pokemons.forEach((pokemon) => {
+    if (pokemon.name.toLowerCase().includes(searchInput.trim().toLowerCase())) {
+      pokemonRepository.addListItem(pokemon);
+    }
+  });
+};
+
+const searchBtn = document.getElementById("search-btn");
+searchBtn.addEventListener("click", handleSearch);</code></pre>
+                </div>
+            </section>
+            
+           
+            <section class="design-process">
+                <h2>Design Process</h2>
+                <p>The design approach for this project focused on creating a clean, intuitive interface that would be familiar to Pokémon fans while remaining accessible to new users. I implemented Bootstrap for consistent styling and responsive layout, ensuring the application looks great on both mobile and desktop devices.</p>
+                
+                <h3>Design Evolution</h3>
+                <div class="design-evolution">
+                    <div class="design-stage">
+                        <h4>Initial Prototype</h4>
+                        <p>The first version featured a simple list of Pokémon names. Users could click on a name to view more details, but the interface was minimal.</p>
+                    </div>
+                    <div class="design-stage">
+                        <h4>Enhanced UI</h4>
+                        <p>I improved the user experience by adding Bootstrap styling to buttons and implementing a modal dialog to display Pokémon details.</p>
+                    </div>
+                    <div class="design-stage">
+                        <h4>Final Design</h4>
+                        <p>The final design incorporates search functionality, improved styling, and better responsiveness for all device sizes.</p>
+                    </div>
+                </div>
+            </section>
+            
+          
+            <section class="challenges">
+                <h2>Challenges & Solutions</h2>
+                
+                <div class="challenge-solution">
+                    <div class="challenge">
+                        <h3>Challenge: API Data Handling</h3>
+                        <p>The PokéAPI returns complex, nested JSON objects with extensive information. Processing this data efficiently and extracting only the required information was challenging.</p>
+                    </div>
+                    <div class="solution">
+                        <h3>Solution</h3>
+                        <p>I implemented a two-stage data loading approach. First, I load the basic list of Pokémon with minimal information. Then, when a user selects a specific Pokémon, I fetch the detailed information just for that selection, improving performance and reducing unnecessary data transfer.</p>
+                    </div>
+                </div>
+                
+                <div class="challenge-solution">
+                    <div class="challenge">
+                        <h3>Challenge: Modal Implementation</h3>
+                        <p>Creating a responsive, accessible modal dialog that works well across all devices required careful attention to detail.</p>
+                    </div>
+                    <div class="solution">
+                        <h3>Solution</h3>
+                        <p>I leveraged Bootstrap's modal component and customized it to meet the specific needs of the application. This provided a consistent user experience while ensuring proper keyboard navigation and screen reader compatibility.</p>
+                    </div>
+                </div>
+                
+                <div class="challenge-solution">
+                    <div class="challenge">
+                        <h3>Challenge: Search Implementation</h3>
+                        <p>Adding a search feature that efficiently filters the Pokémon list without reloading the entire application.</p>
+                    </div>
+                    <div class="solution">
+                        <h3>Solution</h3>
+                        <p>I implemented a client-side search function that filters the already loaded Pokémon data, providing instant results without additional API calls. The function clears and rebuilds the Pokémon list based on the search criteria.</p>
+                    </div>
+                </div>
+            </section>
+            
+            
+            <section class="outcome">
+                <h2>Outcome & Reflection</h2>
+                <p>The Pokédex project successfully met all its initial goals, resulting in a fully functional, responsive web application that provides an engaging way to explore information about Pokémon. Working on this project significantly improved my skills in:</p>
+                <ul>
+                    <li>JavaScript promise handling and asynchronous operations</li>
+                    <li>API integration and data management</li>
+                    <li>Responsive UI design with Bootstrap</li>
+                    <li>DOM manipulation with both vanilla JavaScript and jQuery</li>
+                    <li>Code organization using the IIFE pattern</li>
+                </ul>
+                
+                <h3>Key Learnings</h3>
+                <p>One of the most valuable lessons from this project was the importance of planning the application architecture before diving into coding. Creating separate modules for data handling, UI rendering, and event management made the code more maintainable and easier to debug.</p>
+                
+                <h3>Future Improvements</h3>
+                <p>If I were to continue developing this application, I would consider the following enhancements:</p>
+                <ul>
+                    <li>Implementing pagination for better performance with larger datasets</li>
+                    <li>Adding filtering options by Pokémon type or other attributes</li>
+                    <li>Creating a comparison feature to view stats of multiple Pokémon side by side</li>
+                    <li>Adding animations and more interactive elements to enrich the user experience</li>
+                </ul>
+            </section>
+            
+           
+            <section class="final-links">
+                <h2>Project Links</h2>
+                <div class="project-links-large">
+                    <a href="https://haleytolar.github.io/simple-js-app/" target="_blank" class="button primary">View Live Project</a>
+                    <a href="https://github.com/haleytolar/simple-js-app" target="_blank" class="button secondary">View on GitHub</a>
+                    <a href="index.html#work" class="button tertiary">Back to Portfolio</a>
+                </div>
+            </section>
+        </main>
+        
+        <footer class="page-footer">
+            <p class="footer-text">Find me on</p>
+            <div class="social-icons">
+                <a href="https://github.com/haleytolar" target="_blank">
+                    <img src="img/github_icon.svg" alt="Github" style="width: 50px; height: 50px;">
+                </a>
+                <a href="https://www.linkedin.com/in/haley-tolar-7726ab28b/" target="_blank">
+                    <img src="img/linkedin_icon.svg" alt="LinkedIn" style="width: 50px; height: 50px;">
+                </a>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="js/tota11y.min.js"></script>
+    <script src="js/content.js"></script>
+</body>
+</html>

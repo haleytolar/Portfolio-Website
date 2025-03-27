@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyFlix React Client Case Study | Haley Tolar</title>
+    <link rel="icon" type="image/ico" href="img/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/style.production.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/case-studies.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="page-header">
+            <img src="img/haley_tolar.svg" height="150" width="400" class="page-header__item" alt="logo">
+            <nav class="main-navigation page-header__item">
+                <ul role="menubar" class="navigation-list">
+                    <li role="presentation">
+                        <a href="index.html#home" role="menuitem" class="navigation-list__item">Home</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="index.html#work" role="menuitem" class="navigation-list__item">Work</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="index.html#contact" role="menuitem" class="navigation-list__item">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main class="case-study">
+            <header class="case-study-header">
+                <a href="index.html#work" class="back-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M15 18l-6-6 6-6"/>
+                    </svg>
+                    Portfolio
+                </a>
+                <h1 class="text-2xl font-bold">MyFlix - React Client</h1>
+            </header>
+            
+            <section class="project-overview">
+                <h2>Project Overview</h2>
+                <img src="img/mflix.png" alt="MyFlix React Client Screenshot" class="case-study-main-image">
+                <p>The MyFlix React client is a single-page application that provides users with access to information about movies, directors, and genres. Built with React, this client-side application communicates with my custom-built REST API and MongoDB database to deliver a seamless movie browsing experience.</p>
+                <p>The application allows users to create accounts, browse and search movies, add favorites to their profile, and manage their account information. With a responsive design implemented using React Bootstrap, the app provides an optimal viewing experience across a range of devices.</p>
+            </section>
+            
+           
+            <section class="project-goals">
+                <h2>Project Goals</h2>
+                <ul>
+                    <li>Develop a responsive, multi-page application using React</li>
+                    <li>Implement client-side routing with React Router</li>
+                    <li>Create an intuitive user interface with React Bootstrap components</li>
+                    <li>Integrate with the MyFlix REST API for data retrieval and management</li>
+                    <li>Implement user authentication and authorization</li>
+                    <li>Create a responsive design that works across all devices</li>
+                </ul>
+            </section>
+            
+            
+            <section class="technical-details">
+                <h2>Technical Details</h2>
+                <h3>Tools & Technologies Used</h3>
+                <div class="tech-stack">
+                    <div class="tech-item">React</div>
+                    <div class="tech-item">React Router</div>
+                    <div class="tech-item">React Bootstrap</div>
+                    <div class="tech-item">Axios</div>
+                    <div class="tech-item">Parcel</div>
+                    <div class="tech-item">JWT Authentication</div>
+                    <div class="tech-item">SCSS</div>
+                    <div class="tech-item">ES6</div>
+                    <div class="tech-item">Netlify</div>
+                </div>
+                
+                <h3>Application Architecture</h3>
+                <p>The MyFlix client follows a component-based architecture, with a hierarchy of components handling different aspects of the application. The main structure is defined in the entry point index.jsx, which sets up the router and renders the MainView component.</p>
+                
+                <div class="code-example">
+                    <h4>Application Entry Point</h4>
+                    <pre><code>
+import { createRoot } from "react-dom/client";
+import React from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import { MainView } from "./components/main-view/main-view";
+import Container from "react-bootstrap/Container";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "./index.scss";
+
+const App = () => {
+    return (
+      &lt;BrowserRouter&gt;
+        &lt;Container style=&#123;&#123; textAlign: "center", padding: "20px" &#125;&#125;&gt;
+          &lt;h1 style=&#123;&#123; marginBottom: "20px", fontSize: "4em", color: "white" &#125;&#125;&gt;🄼🄾🅅🄸🄴🄵🄻🄸🅇&lt;/h1&gt;
+          &lt;MainView /&gt;
+        &lt;/Container&gt;
+      &lt;/BrowserRouter&gt;
+    );
+  };
+
+const container = document.querySelector("#root");
+const root = createRoot(container);
+root.render(<App />);</code></pre>
+                </div>
+            
+                <h3>Component Structure</h3>
+                <p>The application is organized into a series of reusable components, each responsible for a specific aspect of the user interface:</p>
+                <ul>
+                    <li><strong>MainView:</strong> The core component that handles routing and state management</li>
+                    <li><strong>LoginView:</strong> Manages user authentication and login processes</li>
+                    <li><strong>MovieCard:</strong> Displays individual movie information in a card format</li>
+                    <li><strong>MovieView:</strong> Shows detailed information about a selected movie</li>
+                    <li><strong>ProfileView:</strong> Allows users to view and edit their profile information</li>
+                    <li><strong>RegistrationView:</strong> Handles new user registration</li>
+                </ul>
+                
+                <h3>API Integration</h3>
+                <p>The client communicates with the MyFlix REST API using Axios for HTTP requests. JWT tokens are stored in localStorage to maintain user sessions and are included in the request headers for authenticated endpoints.</p>
+            </section>
+            
+           
+            <section class="user-interface">
+                <h2>User Interface Design</h2>
+                <p>The MyFlix client features a clean, intuitive interface designed to provide a seamless movie browsing experience. React Bootstrap components form the foundation of the UI, ensuring consistency and responsiveness across the application.</p>
+                
+                <h3>UI Features</h3>
+                <div class="design-evolution">
+                    <div class="design-stage">
+                        <h4>Movie Cards</h4>
+                        <p>Each movie is displayed in a card format with key information and actions. The cards include movie posters, titles, and buttons for accessing more details or adding to favorites.</p>
+                    </div>
+                    <div class="design-stage">
+                        <h4>Responsive Layout</h4>
+                        <p>The grid-based layout adjusts automatically to different screen sizes, ensuring an optimal viewing experience on devices ranging from mobile phones to desktop computers.</p>
+                    </div>
+                    <div class="design-stage">
+                        <h4>User Profile</h4>
+                        <p>The profile view allows users to view their information, update account details, and manage their list of favorite movies.</p>
+                    </div>
+                </div>
+                
+                <h3>Styling Approach</h3>
+                <p>The application uses a combination of React Bootstrap components and custom SCSS for styling. This approach allowed for rapid development of a consistent UI while still maintaining the flexibility to customize the appearance to match the brand identity.</p>
+            </section>
+            
+            
+            <section class="challenges">
+                <h2>Challenges & Solutions</h2>
+                
+                <div class="challenge-solution">
+                    <div class="challenge">
+                        <h3>Challenge: State Management</h3>
+                        <p>Managing application state across multiple components, particularly for user authentication and favorite movies, was complex.</p>
+                    </div>
+                    <div class="solution">
+                        <h3>Solution</h3>
+                        <p>I implemented a centralized state management approach in the MainView component, passing down state and update functions as props to child components. For user authentication, I stored the JWT token in localStorage to persist sessions across page refreshes.</p>
+                    </div>
+                </div>
+                
+                <div class="challenge-solution">
+                    <div class="challenge">
+                        <h3>Challenge: Responsive Design</h3>
+                        <p>Creating a consistent user experience across different screen sizes and devices presented layout and navigation challenges.</p>
+                    </div>
+                    <div class="solution">
+                        <h3>Solution</h3>
+                        <p>I leveraged React Bootstrap's responsive grid system and components, combined with media queries in SCSS, to create a fluid layout that adapts to different viewport sizes. This approach ensured that the application remains usable and visually appealing on both mobile and desktop devices.</p>
+                    </div>
+                </div>
+                
+                <div class="challenge-solution">
+                    <div class="challenge">
+                        <h3>Challenge: API Integration</h3>
+                        <p>Handling asynchronous API requests, error states, and loading indicators while maintaining a smooth user experience.</p>
+                    </div>
+                    <div class="solution">
+                        <h3>Solution</h3>
+                        <p>I implemented a consistent pattern for API requests using Axios, with proper loading states and error handling. For critical operations, I added confirmation dialogs and success messages to keep users informed about the status of their actions.</p>
+                    </div>
+                </div>
+            </section>
+            
+           
+            <section class="outcome">
+                <h2>Outcome & Reflection</h2>
+                <p>The MyFlix React client successfully delivers a fully-featured front-end for the movie database API. The application provides a smooth, intuitive experience for users to browse movies, manage their favorites, and update their profiles. Working on this project significantly improved my skills in:</p>
+                <ul>
+                    <li>Building single-page applications with React</li>
+                    <li>Implementing client-side routing with React Router</li>
+                    <li>Creating responsive UI designs with React Bootstrap</li>
+                    <li>Managing application state in React components</li>
+                    <li>Integrating front-end applications with RESTful APIs</li>
+                    <li>Implementing user authentication in React applications</li>
+                </ul>
+                
+                <h3>Key Learnings</h3>
+                <p>This project reinforced the importance of planning component architecture before implementation. Taking time to design a clean component hierarchy with well-defined props and state made the development process more efficient and resulted in more maintainable code.</p>
+                <p>I also gained valuable experience with React's component lifecycle and hooks, learning to optimize rendering and manage side effects efficiently.</p>
+                
+                <h3>Future Improvements</h3>
+                <p>If I were to continue developing this application, I would consider the following enhancements:</p>
+                <ul>
+                    <li>Implementing Redux for more scalable state management</li>
+                    <li>Adding a movie recommendation system based on user preferences</li>
+                    <li>Enhancing the search functionality with filters for genres, directors, and release years</li>
+                    <li>Implementing client-side caching to improve performance</li>
+                    <li>Adding social features such as sharing movie recommendations</li>
+                </ul>
+            </section>
+            
+            
+            <section class="final-links">
+                <h2>Project Links</h2>
+                <div class="project-links-large">
+                    <a href="https://mflixxx.netlify.app/login" target="_blank" class="button primary">View Live Project</a>
+                    <a href="https://github.com/haleytolar/myFlix-client" target="_blank" class="button secondary">View on GitHub</a>
+                    <a href="index.html#work" class="button tertiary">Back to Portfolio</a>
+                </div>
+            </section>
+        </main>
+        
+        <footer class="page-footer">
+            <p class="footer-text">Find me on</p>
+            <div class="social-icons">
+                <a href="https://github.com/haleytolar" target="_blank">
+                    <img src="img/github_icon.svg" alt="Github" style="width: 50px; height: 50px;">
+                </a>
+                <a href="https://www.linkedin.com/in/haley-tolar-7726ab28b/" target="_blank">
+                    <img src="img/linkedin_icon.svg" alt="LinkedIn" style="width: 50px; height: 50px;">
+                </a>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="js/tota11y.min.js"></script>
+    <script src="js/content.js"></script>
+</body>
+</html>

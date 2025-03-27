@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyFlix MongoDB API Case Study | Haley Tolar</title>
+    <link rel="icon" type="image/ico" href="img/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/style.production.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/case-studies.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="page-header">
+            <img src="img/haley_tolar.svg" height="150" width="400" class="page-header__item" alt="logo">
+            <nav class="main-navigation page-header__item">
+                <ul role="menubar" class="navigation-list">
+                    <li role="presentation">
+                        <a href="index.html#home" role="menuitem" class="navigation-list__item">Home</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="index.html#work" role="menuitem" class="navigation-list__item">Work</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="index.html#contact" role="menuitem" class="navigation-list__item">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main class="case-study">
+            <header class="case-study-header">
+                <a href="index.html#work" class="back-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M15 18l-6-6 6-6"/>
+                    </svg>
+                    Portfolio
+                </a>
+                <h1 class="text-2xl font-bold">MyFlix MongoDB API</h1>
+            </header>
+            
+            
+            <section class="project-overview">
+                <h2>Project Overview</h2>
+                <img src="img/mongo DB.png" alt="MyFlix MongoDB Project Screenshot" class="case-study-main-image">
+                <p>The MyFlix API is a comprehensive RESTful API built to serve as the backend for a movie database application. The API provides endpoints for managing users, movies, and user favorites, enabling a complete movie browsing and collection experience.</p>
+                <p>This project demonstrates my ability to build secure, fully-featured backend services using Node.js, Express, and MongoDB. It includes user authentication, data validation, and comprehensive API documentation.</p>
+            </section>
+            
+        
+            <section class="project-goals">
+                <h2>Project Goals</h2>
+                <ul>
+                    <li>Create a RESTful API architecture following industry best practices</li>
+                    <li>Implement secure user authentication and authorization</li>
+                    <li>Design and implement a MongoDB database with appropriate data schemas</li>
+                    <li>Develop comprehensive CRUD operations for users and movie data</li>
+                    <li>Ensure API security through validation, authentication, and proper error handling</li>
+                    <li>Provide thorough API documentation for developers</li>
+                </ul>
+            </section>
+            
+            
+            <section class="technical-details">
+                <h2>Technical Details</h2>
+                <h3>Tools & Technologies Used</h3>
+                <div class="tech-stack">
+                    <div class="tech-item">Node.js</div>
+                    <div class="tech-item">Express</div>
+                    <div class="tech-item">MongoDB</div>
+                    <div class="tech-item">Mongoose</div>
+                    <div class="tech-item">JWT Authentication</div>
+                    <div class="tech-item">Passport.js</div>
+                    <div class="tech-item">Express Validator</div>
+                    <div class="tech-item">Bcrypt</div>
+                    <div class="tech-item">CORS</div>
+                    <div class="tech-item">Morgan</div>
+                </div>
+                
+                <h3>API Architecture</h3>
+                <p>The API follows RESTful principles with well-defined endpoints for different resources. It uses the Express framework for routing and middleware functionality, with MongoDB as the database through the Mongoose ODM.</p>
+                
+                <div class="code-example">
+                    <h4>Key API Endpoints Implementation</h4>
+                    <pre><code>
+/**
+ * GET: Returns a list of all movies.
+ */
+app.get('/movies', async (req, res) => {
+  await Movies.find()
+    .then((movies) => {
+      res.status(201).json(movies);
+    })
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send('Error: ' + err);
+    });
+});
+
+/**
+ * GET: Returns a user by username.
+ */
+app.get(
+  "/users/:Username",
+  passport.authenticate("jwt", { session: false }),
+  async (req, res) => {
+    await Users.findOne({ Username: req.params.Username })
+      .then((user) => {
+        res.json(user);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.status(500).send("Error: " + err);
+      });
+  }
+);
+
+/**
+ * POST: Adds a movie to a user's list of favorites.
+ */
+app.post('/users/:Username/movies/:MovieID', passport.authenticate('jwt', { session: false }), async (req, res) => {
+  try {
+    if (req.user.Username !== req.params.Username) {
+      return res.status(400).send('Permission denied');
+    }
+    const updatedUser = await Users.findOneAndUpdate(
+      { Username: req.params.Username },
+      { $push: { FavoriteMovies: req.params.MovieID } },
+      { new: true }
+    );
+    res.json(updatedUser);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Error: ' + err);
+  }
+});</code></pre>
+                </div>
+            
+                <h3>Authentication & Security</h3>
+                <p>The API implements JWT-based authentication with Passport.js. Passwords are securely hashed using bcrypt, and endpoints are protected based on user roles and permissions.</p>
+                
+                <div class="code-example">
+                    <h4>User Authentication Implementation</h4>
+                    <pre><code>
+/**
+ * POST: Creates a new user with validation and password hashing.
+ */
+app.post(
+  "/users",
+  [
+    check("Username", "Username is required").isLength({ min: 5 }),
+    check("Username", "Username contains non alphanumeric characters - not allowed.").isAlphanumeric(),
+    check("Password", "Password is required.").not().isEmpty(),
+    check("Email", "Email does not appear to be valid").isEmail(),
+  ],
+  async (req, res) => {
+    let errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(422).json({ errors: errors.array() });
+    }
+    let hashedPassword = Users.hashPassword(req.body.Password);
+    await Users.findOne({ Username: req.body.Username })
+    .then((user) => {
+      if (user) {
+        return res.status(400).send(req.body.Username + " already exists");
+      } else {
+        Users.create({
+          Username: req.body.Username,
+          Password: hashedPassword,
+          Email: req.body.Email,
+          Birthday: req.body.Birthday,
+        })
+        .then((user) => {
+          res.status(201).json(user);
+        })
+        .catch((error) => {
+          console.error(error);
+          res.status(500).send("Error: " + error);
+        });
+      }
+    })
+    .catch((error) => {
+      console.error(error);
+      res.status(500).send("Error: " + error);
+    });
+  }
+);</code></pre>
+                </div>
+            </section>
+            
+           
+            <section class="database-design">
+                <h2>Database Design</h2>
+                <p>The MongoDB database for MyFlix consists of two main collections: Movies and Users. The schemas were designed to efficiently store and retrieve information while maintaining appropriate relationships between entities.</p>
+                
+                <h3>Data Models</h3>
+                <p>The Movie schema includes details such as title, description, genre, director, and image URLs. The User schema manages user profiles and includes a FavoriteMovies array that references Movie documents, creating a relationship between users and their favorite movies.</p>
+                
+                <h3>Data Relationships</h3>
+                <p>The database implements document references to maintain relationships between collections. For example, the User schema contains an array of Movie IDs to track favorite movies, allowing for efficient querying and updates of user preferences.</p>
+            </section>
+            
+            
+            <section class="challenges">
+                <h2>Challenges & Solutions</h2>
+                
+                <div class="challenge-solution">
+                    <div class="challenge">
+                        <h3>Challenge: User Authentication</h3>
+                        <p>Implementing secure, token-based authentication with proper password hashing and permission validation across all protected endpoints.</p>
+                    </div>
+                    <div class="solution">
+                        <h3>Solution</h3>
+                        <p>I used JWT tokens with Passport.js for authentication and bcrypt for secure password hashing. For each protected endpoint, I implemented middleware to verify not only that the user is authenticated but also that they have the appropriate permissions to access specific resources.</p>
+                    </div>
+                </div>
+                
+                <div class="challenge-solution">
+                    <div class="challenge">
+                        <h3>Challenge: CORS Implementation</h3>
+                        <p>Allowing specific origins to access the API while maintaining security was challenging, especially when supporting multiple client applications.</p>
+                    </div>
+                    <div class="solution">
+                        <h3>Solution</h3>
+                        <p>I implemented a dynamic CORS configuration that allows specified origins while rejecting unauthorized ones. The solution includes a whitelist of allowed origins and proper error handling for rejected requests, ensuring the API remains secure while being accessible to authorized client applications.</p>
+                    </div>
+                </div>
+                
+                <div class="challenge-solution">
+                    <div class="challenge">
+                        <h3>Challenge: Data Validation</h3>
+                        <p>Ensuring all user inputs are properly validated before being processed and stored in the database.</p>
+                    </div>
+                    <div class="solution">
+                        <h3>Solution</h3>
+                        <p>I used express-validator to implement comprehensive input validation for all user-submitted data. This includes checking for required fields, validating email formats, ensuring username requirements are met, and preventing duplicate accounts. The validation middleware catches issues before they reach the database layer.</p>
+                    </div>
+                </div>
+            </section>
+            
+           
+            <section class="outcome">
+                <h2>Outcome & Reflection</h2>
+                <p>The MyFlix API successfully delivers a robust backend for movie applications, providing comprehensive endpoints for movie data retrieval, user management, and favorites tracking. Working on this project significantly improved my skills in:</p>
+                <ul>
+                    <li>Building RESTful APIs with Node.js and Express</li>
+                    <li>Designing and implementing MongoDB databases with Mongoose</li>
+                    <li>Creating secure authentication systems</li>
+                    <li>Implementing data validation and error handling</li>
+                    <li>API documentation and testing</li>
+                </ul>
+                
+                <h3>Key Learnings</h3>
+                <p>This project taught me the importance of designing APIs with both security and usability in mind. I learned how to balance robust security measures with developer-friendly endpoints and documentation. Additionally, working with MongoDB reinforced the value of proper schema design and data relationships in NoSQL databases.</p>
+                
+                <h3>Future Improvements</h3>
+                <p>If I were to continue developing this API, I would consider the following enhancements:</p>
+                <ul>
+                    <li>Implementing rate limiting to prevent abuse</li>
+                    <li>Adding comprehensive unit and integration tests</li>
+                    <li>Creating a GraphQL interface alongside the REST API</li>
+                    <li>Implementing more advanced movie recommendation features</li>
+                    <li>Adding analytics endpoints to track user engagement</li>
+                </ul>
+            </section>
+            
+            
+            <section class="final-links">
+                <h2>Project Links</h2>
+                <div class="project-links-large">
+                    <a href="https://mflixxx.netlify.app/login" target="_blank" class="button primary">View Live Demo</a>
+                    <a href="https://github.com/haleytolar/movie_api" target="_blank" class="button secondary">View on GitHub</a>
+                    <a href="index.html#work" class="button tertiary">Back to Portfolio</a>
+                </div>
+            </section>
+        </main>
+        
+        <footer class="page-footer">
+            <p class="footer-text">Find me on</p>
+            <div class="social-icons">
+                <a href="https://github.com/haleytolar" target="_blank">
+                    <img src="img/github_icon.svg" alt="Github" style="width: 50px; height: 50px;">
+                </a>
+                <a href="https://www.linkedin.com/in/haley-tolar-7726ab28b/" target="_blank">
+                    <img src="img/linkedin_icon.svg" alt="LinkedIn" style="width: 50px; height: 50px;">
+                </a>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="js/tota11y.min.js"></script>
+    <script src="js/content.js"></script>
+</body>
+</html>

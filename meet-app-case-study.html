@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meet App Case Study | Haley Tolar</title>
+    <link rel="icon" type="image/ico" href="img/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
+    <link rel="stylesheet" type="text/css" href="css/style.production.css">
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link rel="stylesheet" type="text/css" href="css/case-studies.css">
+</head>
+<body>
+    <div class="wrapper">
+        <header class="page-header">
+            <img src="img/haley_tolar.svg" height="150" width="400" class="page-header__item" alt="logo">
+            <nav class="main-navigation page-header__item">
+                <ul role="menubar" class="navigation-list">
+                    <li role="presentation">
+                        <a href="index.html#home" role="menuitem" class="navigation-list__item">Home</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="index.html#work" role="menuitem" class="navigation-list__item">Work</a>
+                    </li>
+                    <li role="presentation">
+                        <a href="index.html#contact" role="menuitem" class="navigation-list__item">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        
+        <main class="case-study">
+            <header class="case-study-header">
+                <a href="index.html#work" class="back-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M15 18l-6-6 6-6"/>
+                    </svg>
+                    Portfolio
+                </a>
+                <h1 class="text-2xl font-bold">Meet App</h1>
+            </header>
+            
+            
+            <section class="project-overview">
+                <h2>Project Overview</h2>
+                <img src="img/meet.png" alt="Meet App Project Screenshot" class="case-study-main-image">
+                <p>The Meet App is a Progressive Web Application (PWA) that allows users to discover events happening in cities around the world. Built with React, the application integrates with the Google Calendar API to provide users with real-time scheduling information and event details.</p>
+                <p>The app features a responsive design with interactive data visualization, location-based filtering, and offline capabilities. Users can search for events by city, specify the number of events to view, and analyze event distribution through intuitive charts.</p>
+            </section>
+            
+           
+            <section class="project-goals">
+                <h2>Project Goals</h2>
+                <ul>
+                    <li>Create a Progressive Web Application with offline functionality</li>
+                    <li>Implement serverless architecture using AWS Lambda functions</li>
+                    <li>Integrate with the Google Calendar API for real-time event data</li>
+                    <li>Develop a test-driven approach using Jest and React Testing Library</li>
+                    <li>Create data visualizations to enhance the user experience</li>
+                    <li>Implement responsive design that works across all devices</li>
+                </ul>
+            </section>
+            
+        
+            <section class="technical-details">
+                <h2>Technical Details</h2>
+                <h3>Tools & Technologies Used</h3>
+                <div class="tech-stack">
+                    <div class="tech-item">React</div>
+                    <div class="tech-item">Progressive Web App</div>
+                    <div class="tech-item">Google Calendar API</div>
+                    <div class="tech-item">AWS Lambda</div>
+                    <div class="tech-item">OAuth2</div>
+                    <div class="tech-item">Jest</div>
+                    <div class="tech-item">React Testing Library</div>
+                    <div class="tech-item">Recharts</div>
+                    <div class="tech-item">GitHub Pages</div>
+                </div>
+                
+                <h3>Application Architecture</h3>
+                <p>The Meet App follows a component-based architecture with React Hooks for state management. The main App component orchestrates the core functionality, while specialized components handle specific aspects of the user interface.</p>
+                
+                <div class="code-example">
+                    <h4>App Component Structure</h4>
+                    <pre><code>
+import React, { useEffect, useState } from 'react';
+import CitySearch from './components/CitySearch';
+import EventList from './components/EventList';
+import NumberOfEvents from './components/NumberOfEvents';
+import { extractLocations, getEvents } from './api';
+import { InfoAlert, ErrorAlert, WarningAlert } from './components/Alert';
+import CityEventsChart from './components/CityEventsChart';
+import EventGenresChart from './components/EventGenresChart';
+import './App.css';
+
+const App = () => {
+  const [events, setEvents] = useState([]);
+  const [currentNOE, setCurrentNOE] = useState(32);
+  const [allLocations, setAllLocations] = useState([]);
+  const [currentCity, setCurrentCity] = useState("See all cities");
+  const [infoAlert, setInfoAlert] = useState("");
+  const [errorAlert, setErrorAlert] = useState(""); 
+  const [warningAlert, setWarningAlert] = useState("");  
+
+  useEffect(() => {
+    if (navigator.onLine) {
+      setWarningAlert("");
+    } else {
+      setWarningAlert("App is offline");
+    }
+    fetchData();
+  }, [currentCity, currentNOE]);
+
+  const fetchData = async () => {
+    const allEvents = await getEvents();
+    const filteredEvents = currentCity === "See all cities" ?
+      allEvents :
+      allEvents.filter(event => event.location === currentCity);
+    setEvents(filteredEvents.slice(0, currentNOE));
+    setAllLocations(extractLocations(allEvents));
+  }
+
+  return (
+    &lt;div className="App"&gt;
+      &lt;h1&gt;Meet App&lt;/h1&gt;
+      &lt;div className="alerts-container"&gt;
+        {infoAlert.length ? &lt;InfoAlert text={infoAlert} /&gt; : null}
+        {warningAlert.length ? &lt;WarningAlert text={warningAlert} /&gt; : null}
+        {errorAlert.length ? &lt;ErrorAlert text={errorAlert} /&gt; : null}
+      &lt;/div&gt;
+      &lt;CitySearch
+        allLocations={allLocations}
+        setCurrentCity={setCurrentCity}
+        setInfoAlert={setInfoAlert} /&gt;
+      &lt;NumberOfEvents setCurrentNOE={setCurrentNOE} setErrorAlert={setErrorAlert} /&gt;
+      &lt;div className="charts-container"&gt;
+        &lt;div className="chart-container"&gt;
+          &lt;EventGenresChart events={events} /&gt;
+        &lt;/div&gt;
+        &lt;div className="chart-container"&gt;
+          &lt;CityEventsChart allLocations={allLocations} events={events} /&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;  
+      &lt;EventList events={events} /&gt;
+    &lt;/div&gt;
+  );
+}</code></pre>
+                </div>
+            
+                <h3>API Integration</h3>
+                <p>The application integrates with the Google Calendar API through AWS Lambda functions, providing a secure way to retrieve event data without exposing API keys on the client side. The API integration includes OAuth2 authentication, token management, and fallback to cached data when offline.</p>
+                
+                <div class="code-example">
+                    <h4>API Implementation</h4>
+                    <pre><code>
+export const getEvents = async () => {
+  if (window.location.href.startsWith("http://localhost")) {
+    return mockData;
+  }
+  if (!navigator.onLine) {
+    const events = localStorage.getItem("lastEvents");
+    return events ? JSON.parse(events) : [];
+  }
+  const token = await getAccessToken();
+  if (token) {
+    removeQuery();
+    const url = "https://fvwedyd580.execute-api.eu-central-1.amazonaws.com/dev/api/get-events" + "/" + token;
+    const response = await fetch(url);
+    const result = await response.json();
+    if (result) {
+      localStorage.setItem("lastEvents", JSON.stringify(result.events));
+      return result.events;
+    } else return null; 
+  }
+};</code></pre>
+                </div>
+                
+                <h3>Test-Driven Development</h3>
+                <p>The Meet App was developed using a test-driven approach with Jest and React Testing Library. The testing strategy included both unit tests for individual components and integration tests for component interactions.</p>
+                
+                <div class="code-example">
+                    <h4>Testing Implementation</h4>
+                    <pre><code>
+describe('&lt;CitySearch /&gt; component', () => {
+    let CitySearchComponent;
+    beforeEach(() => {
+        CitySearchComponent = render(&lt;CitySearch allLocations={[]} setCurrentCity={() => { }} setInfoAlert={() => { }}/&gt;);
+    });
+
+    describe('&lt;CitySearch /&gt; integration', () => {
+        test('renders suggestions list when the app is rendered.', async () => {
+            const user = userEvent.setup();
+            const AppComponent = render(&lt;App /&gt;);
+            const AppDOM = AppComponent.container.firstChild;
+        
+            const CitySearchDOM = AppDOM.querySelector('#city-search');
+            const cityTextBox = within(CitySearchDOM).queryByRole('textbox');
+            await user.click(cityTextBox);
+        
+            const allEvents = await getEvents();
+            const allLocations = extractLocations(allEvents);
+        
+            const suggestionListItems = within(CitySearchDOM).queryAllByRole('listitem');
+            expect(suggestionListItems.length).toBe(allLocations.length + 1);
+        });
+    });</code></pre>
+                </div>
+            </section>
+            
+           
+            <section class="pwa-features">
+                <h2>Progressive Web App Features</h2>
+                <p>As a Progressive Web Application, the Meet App includes several key features that enhance the user experience and provide functionality even when offline:</p>
+                
+                <div class="design-evolution">
+                    <div class="design-stage">
+                        <h4>Offline Functionality</h4>
+                        <p>The app uses service workers and caching strategies to enable basic functionality without an internet connection. When offline, users can still access previously loaded events and perform filtering operations.</p>
+                    </div>
+                    <div class="design-stage">
+                        <h4>Installable Experience</h4>
+                        <p>Users can install the Meet App on their devices, creating an app-like experience with an icon on the home screen and full-screen mode, blurring the line between web and native applications.</p>
+                    </div>
+                </div>
+                
+                <h3>Data Visualization</h3>
+                <p>The Meet App includes two interactive charts that provide users with insights about events:</p>
+                <ul>
+                    <li><strong>Event Genres Chart:</strong> A pie chart showing the distribution of events by category or genre</li>
+                    <li><strong>City Events Chart:</strong> A scatter plot visualizing the number of events in different cities</li>
+                </ul>
+                <p>These visualizations help users identify trends and make more informed decisions about which events to attend.</p>
+            </section>
+            
+            
+            <section class="challenges">
+                <h2>Challenges & Solutions</h2>
+                
+                <div class="challenge-solution">
+                    <div class="challenge">
+                        <h3>Challenge: OAuth Authentication</h3>
+                        <p>Implementing secure OAuth2 authentication with the Google Calendar API without exposing sensitive credentials on the client side.</p>
+                    </div>
+                    <div class="solution">
+                        <h3>Solution</h3>
+                        <p>I created a serverless architecture using AWS Lambda functions to handle the OAuth flow securely. This approach keeps sensitive API credentials on the server side while providing a seamless authentication experience for users.</p>
+                    </div>
+                </div>
+                
+                <div class="challenge-solution">
+                    <div class="challenge">
+                        <h3>Challenge: Offline Functionality</h3>
+                        <p>Ensuring the app remains functional when users lose internet connectivity, particularly for data-intensive features.</p>
+                    </div>
+                    <div class="solution">
+                        <h3>Solution</h3>
+                        <p>I implemented a caching strategy that stores event data in localStorage when the app is online. When offline, the app detects the connectivity status and serves cached data, providing appropriate alerts to users about the limited functionality.</p>
+                    </div>
+                </div>
+                
+                <div class="challenge-solution">
+                    <div class="challenge">
+                        <h3>Challenge: Test-Driven Development</h3>
+                        <p>Writing effective tests for components that rely on asynchronous API calls and complex user interactions.</p>
+                    </div>
+                    <div class="solution">
+                        <h3>Solution</h3>
+                        <p>I adopted a comprehensive testing strategy using Jest and React Testing Library, focusing on both unit and integration tests. For components with API dependencies, I created mock data and implemented techniques like dependency injection to make the code more testable.</p>
+                    </div>
+                </div>
+            </section>
+            
+           
+            <section class="outcome">
+                <h2>Outcome & Reflection</h2>
+                <p>The Meet App successfully delivers a Progressive Web Application that provides users with real-time event information while maintaining functionality even when offline. Working on this project significantly improved my skills in:</p>
+                <ul>
+                    <li>Building Progressive Web Applications with React</li>
+                    <li>Implementing serverless architectures with AWS Lambda</li>
+                    <li>Integrating with third-party APIs securely</li>
+                    <li>Test-driven development using Jest and React Testing Library</li>
+                    <li>Creating data visualizations with Recharts</li>
+                    <li>Managing application state with React Hooks</li>
+                </ul>
+                
+                <h3>Key Learnings</h3>
+                <p>This project reinforced the importance of designing for offline-first experiences. By planning for offline functionality from the beginning, I created a more resilient application that provides value to users regardless of their connectivity status.</p>
+                <p>The test-driven approach also proved invaluable, as it helped identify and address issues early in the development process, resulting in more robust and maintainable code.</p>
+                
+                <h3>Future Improvements</h3>
+                <p>If I were to continue developing the Meet App, I would consider the following enhancements:</p>
+                <ul>
+                    <li>Implementing a more sophisticated caching strategy with IndexedDB for larger datasets</li>
+                    <li>Adding user accounts to enable personalized event recommendations</li>
+                    <li>Enhancing the data visualization with more interactive features and filtering options</li>
+                    <li>Implementing real-time updates using WebSockets when users are online</li>
+                    <li>Adding social features to allow users to share events and coordinate attendance</li>
+                </ul>
+            </section>
+            
+            
+            <section class="final-links">
+                <h2>Project Links</h2>
+                <div class="project-links-large">
+                    <a href="https://haleytolar.github.io/meet3/" target="_blank" class="button primary">View Live Project</a>
+                    <a href="https://github.com/haleytolar/meet3" target="_blank" class="button secondary">View on GitHub</a>
+                    <a href="index.html#work" class="button tertiary">Back to Portfolio</a>
+                </div>
+            </section>
+        </main>
+        
+        <footer class="page-footer">
+            <p class="footer-text">Find me on</p>
+            <div class="social-icons">
+                <a href="https://github.com/haleytolar" target="_blank">
+                    <img src="img/github_icon.svg" alt="Github" style="width: 50px; height: 50px;">
+                </a>
+                <a href="https://www.linkedin.com/in/haley-tolar-7726ab28b/" target="_blank">
+                    <img src="img/linkedin_icon.svg" alt="LinkedIn" style="width: 50px; height: 50px;">
+                </a>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="js/tota11y.min.js"></script>
+    <script src="js/content.js"></script>
+</body>
+</html>
