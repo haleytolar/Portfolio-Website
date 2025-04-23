@@ -3,224 +3,429 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Haley Tolar's Portfolio</title>
+    <title>Haley Tolar | Web Developer</title>
     <link rel="icon" type="image/ico" href="img/favicon.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Play:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/normalize.css">
-    <link rel="stylesheet" type="text/css" href="css/style.production.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        section {
-            padding: 60px 20px;
-            min-height: 50vh; 
-        }
-    </style>
 </head>
 <body>
     <div class="wrapper">
+
         <header class="page-header">
-            <img src="img/haley_tolar.svg" height="150" width="400" class="page-header__item" alt="logo">
-            <nav class="main-navigation page-header__item">
-                <ul role="menubar" class="navigation-list">
-                    <li role="presentation">
-                        <a href="#home" role="menuitem" class="navigation-list__item">Home</a>
-                    </li>
-                    <li role="presentation">
-                        <a href="#work" role="menuitem" class="navigation-list__item">Work</a>
-                    </li>
-                    <li role="presentation">
-                        <a href="#contact" role="menuitem" class="navigation-list__item">Contact</a>
-                    </li>
-                </ul>
-            </nav>
+            <div class="container">
+                <img src="img/haley_tolar.svg" class="logo" alt="logo">
+                <nav class="main-navigation">
+                    <button class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <ul role="menubar" class="navigation-list">
+                        <li role="presentation">
+                            <a href="#home" role="menuitem">Home</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#about" role="menuitem">About</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#skills" role="menuitem">Skills</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#work" role="menuitem">Work</a>
+                        </li>
+                        <li role="presentation">
+                            <a href="#contact" role="menuitem">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
         </header>
         
-        <section id="home" class="section-1">
-            <div class="profile-about-container">
-                <div class="intro">
-                    <h1 class="custom-h1 title" style="--n: 5; --typing-duration: 1s;">Hello</h1>
-                    <h1 class="custom-h1 title world" style="--n: 5; --typing-duration: 1s; --first-line-typing-time: 1.2s;">World!</h1>
-                    
-                    <a href="img/Tolar-Haley Resume-2.docx" download="Tolar-Haley Resume.docx" class="resume-link">
-                        Download Resume
-                    </a>
-                </div>
-                
-                <div class="profile-text-container">
-                    <img src="img/headshot.jpg" class="profile__portrait" alt="A photograph of me">
-                    <p class="typewriter-p" data-speed="50">My name is Haley. I'm a web developer from the United States.</p>
-                </div>
-            </div>
-        </section>
-        
-        <div class="divider"></div>   
-        
-        <section class="content-container">
-            <div class="content-box">
-                <p>
-                    I come from a dynamic background in the film industry, where creativity and storytelling played a huge role in shaping my perspective. However, I discovered a passion for web development that has driven me to transition into this ever-evolving field, where I now focus on advancing my career by crafting engaging digital experiences. My developer journey began with a comprehensive program at CareerFoundry, where I gained hands-on experience in web development technologies like JavaScript, TypeScript, React, Angular, NodeJS, and MongoDB. Through this immersive program, I also developed essential non-technical skills such as problem-solving, time management, and collaboration, which are critical in a fast-paced industry.
-                     
-                    Switching careers has been an exciting adventure, fueled by my love for learning and creativity. I thrive on challenges, continuously seeking opportunities to grow, refine my skills, and create user-centered solutions that leave a lasting impact.
-                </p>
-            </div>
-            
-            <h1 class="about-h1" id="typing-h1">About Me</h1>
-        </section>
-        
-        <div class="divider"></div> 
-        
-        <section>
-            <div class="skills-grid">
-                <h1>Skills</h1>
-                <div class="skill-title">HTML</div>
-                <div class="skill-title">CSS</div>
-                <div class="skill-title">JavaScript</div>
-                <div class="skill-title">Express</div>
-                <div class="skill-title">Node</div>
-                <div class="skill-title">REST API</div>
-                <div class="skill-title">React</div>
-                <div class="skill-title">Angular</div>
-            </div>
-        </section>
-        
-        <section id="work" class="section section-3">
-            <div id="work-head">
-                <h1>Work</h1>
-            </div>
-            
-            <div class="grid">
-                <div class="grid__item">
-                    <img src="img/pokedex.png" alt="Pokédex Project" class="project-thumbnail">
-                    <h2>Pokédex</h2>
-                    <p>An application that retrieves information about Pokémon from an external API using JS, HTML, CSS, Bootstrap, jQuery, and ESlint</p>
-                    <div class="project-links-container">
-                        <a href="https://github.com/haleytolar/simple-js-app?tab=readme-ov-file" target="_blank">GitHub</a>
-                        <a href="pokedex-case-study.html">Case Study</a>
-                        <a href="https://haleytolar.github.io/simple-js-app/" target="_blank" rel="noopener noreferrer">Live Demo</a>
-                    </div>
-                </div>
-                
-                <div class="grid__item">
-                    <img src="img/todo.png" alt="To-Do List Project" class="project-thumbnail">
-                    <h2>To-Do List</h2>
-                    <p>This is a to-do list app built with Redux, showcasing effective task management through actions and reducers.</p>
-                    <div class="project-links-container">
-                        <a href="https://github.com/haleytolar/Redux-To-Do-App" target="_blank">GitHub</a>
-                    </div>
-                </div>
-                
-                <div class="grid__item">
-                    <img src="img/mongo DB.png" alt="MyFlix MongoDB Project" class="project-thumbnail">
-                    <h2>MyFlix - MongoDB</h2>
-                    <p>This is a RESTful API for managing a movie database using MongoDB.</p>
-                    <div class="project-links-container">
-                        <a href="https://github.com/haleytolar/movie_api" target="_blank">GitHub</a>
-                        <a href="myflix-mongodb-case-study.html">Case Study</a>
-                        <a href="https://mflixxx.netlify.app/login" target="_blank" rel="noopener noreferrer">Live Demo</a>
-                    </div>
-                </div>
-                
-                <div class="grid__item">
-                    <img src="img/mflix.png" alt="MyFlix React Project" class="project-thumbnail">
-                    <h2>MyFlix - React</h2>
-                    <p>A React app for movie browsing, saving favorites, and profile management.</p>
-                    <div class="project-links-container">
-                        <a href="https://github.com/haleytolar/myFlix-client" target="_blank">GitHub</a>
-                        <a href="myflix-react-case.html">Case Study</a>
-                        <a href="https://mflixxx.netlify.app/login" target="_blank" rel="noopener noreferrer">Live Demo</a>
-                    </div>
-                </div>
-                
-                <div class="grid__item">
-                    <img src="img/meet-app.png" alt="Meet App Project" class="project-thumbnail">
-                    <h2>Meet App</h2>
-                    <p>A PWA that fetches real-time scheduling info from the Google Calendar API.</p>
-                    <div class="project-links-container">
-                        <a href="https://github.com/haleytolar/meet3" target="_blank">GitHub</a>
-                        <a href="meet-app-case-study.html">Case Study</a>
-                        <a href="https://haleytolar.github.io/meet3/" target="_blank" rel="noopener noreferrer">Live Demo</a>
-                    </div>
-                </div>
 
-                <div class="grid__item">
-                    <img src="img/recipe-app.png" alt="Meet App Project" class="project-thumbnail">
-                    <h2>Recipe App</h2>
-                    <p>A user-friendly web app for storing and managing favorite recipes. Built with Django, it features a clean admin interface for adding, editing, and organizing recipes, complete with database integration for persistent storage.</p>
-                    <div class="project-links-container">
-                        <a href="https://github.com/haleytolar/recipe_app" target="_blank">GitHub</a>
-                        <a href="https://recipe-app-19eh.onrender.com" target="_blank" rel="noopener noreferrer">Live Demo</a>
+        <section id="home" class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="hero-title">
+                            <span class="title-line">Hello World!</span>
+                            <span class="title-accent">I'm Haley Tolar</span>
+                        </h1>
+                        <p class="hero-subtitle">A passionate web developer from the United States</p>
+                        <div class="hero-cta">
+                            <a href="img/Tolar-Haley-Resume.pdf" download="Tolar-Haley-Resume.pdf" class="primary-btn">
+                                Download Resume
+                            </a>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="grid__item">
-                    <img src="img/myflix-angular.png" alt="MyFlix Angular Project" class="project-thumbnail">
-                    <h2>MyFlix - Angular</h2>
-                    <p>This frontend for the MyFlix API offers dynamic and responsive UI with Angular.</p>
-                    <div class="project-links-container">
-                        <a href="https://github.com/haleytolar/myFlix-Angular-client2" target="_blank">GitHub</a>
-                    </div>
-                </div>
-                
-                <div class="grid__item">
-                    <img src="img/chat.png" alt="Chat App Project" class="project-thumbnail">
-                    <h2>Chat App</h2>
-                    <p>A React Native chat app for instant messaging, image sharing, and location sharing.</p>
-                    <div class="project-links-container">
-                        <a href="https://github.com/haleytolar/Chat-App" target="_blank">GitHub</a>
+                    
+                    <div class="hero-image">
+                        <div class="image-container">
+                            <img src="img/headshot.jpg" alt="A photograph of Haley Tolar" class="profile-image">
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
         
-        <section id="contact" class="section section-4">
-            <div class="contact-section">
-                <h1>Contact Me</h1>
-                <form action="your-form-handler-url" method="post">
+
+        <section id="about" class="section about-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">About Me</h2>
+                    <div class="title-decoration"></div>
+                </div>
+                
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>
+                            I come from a dynamic background in the film industry, where creativity and storytelling played a huge role in shaping my perspective. However, I discovered a passion for web development that has driven me to transition into this ever-evolving field, where I now focus on advancing my career by crafting engaging digital experiences.
+                        </p>
+                        <p>
+                            My developer journey began with a comprehensive program at CareerFoundry, where I gained hands-on experience in web development technologies like JavaScript, TypeScript, React, Angular, NodeJS, and MongoDB. Through this immersive program, I also developed essential non-technical skills such as problem-solving, time management, and collaboration, which are critical in a fast-paced industry.
+                        </p>
+                        <p>
+                            Switching careers has been an exciting adventure, fueled by my love for learning and creativity. I thrive on challenges, continuously seeking opportunities to grow, refine my skills, and create user-centered solutions that leave a lasting impact.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+<section id="skills" class="section skills-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Skills</h2>
+            <div class="title-decoration"></div>
+        </div>
+        
+        <div class="skills-grid">
+
+            <div class="skill-card">
+                <div class="skill-icon html-icon"></div>
+                <h3 class="skill-name">HTML5</h3>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon css-icon"></div>
+                <h3 class="skill-name">CSS3</h3>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon js-icon"></div>
+                <h3 class="skill-name">JavaScript (ES6+)</h3>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon bootstrap-icon"></div>
+                <h3 class="skill-name">Bootstrap</h3>
+            </div>
+            
+
+            <div class="skill-card">
+                <div class="skill-icon react-icon"></div>
+                <h3 class="skill-name">React</h3>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon angular-icon"></div>
+                <h3 class="skill-name">Angular</h3>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon react-native-icon"></div>
+                <h3 class="skill-name">React Native</h3>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon expo-icon"></div>
+                <h3 class="skill-name">Expo</h3>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon gifted-chat-icon"></div>
+                <h3 class="skill-name">Gifted Chat</h3>
+            </div>
+            
+            <div class="skill-card">
+                <div class="skill-icon node-icon"></div>
+                <h3 class="skill-name">Node.js</h3>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon express-icon"></div>
+                <h3 class="skill-name">Express</h3>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon mongo-icon"></div>
+                <h3 class="skill-name">MongoDB</h3>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon python-icon"></div>
+                <h3 class="skill-name">Python/Django</h3>
+            </div>
+            
+
+            <div class="skill-card">
+                <div class="skill-icon firebase-icon"></div>
+                <h3 class="skill-name">Firebase</h3>
+            </div>
+            <div class="skill-card">
+                <div class="skill-icon async-storage-icon"></div>
+                <h3 class="skill-name">AsyncStorage</h3>
+            </div>
+            
+
+            <div class="skill-card">
+                <div class="skill-icon ui-ux-icon"></div>
+                <h3 class="skill-name">UI/UX Design</h3>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <section id="work" class="section work-section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">My Work</h2>
+                    <div class="title-decoration"></div>
+                </div>
+                
+                <div class="work-grid">
+
+                    <div class="work-item">
+                        <div class="work-image">
+                            <img src="img/pokedex.png" alt="Pokédex Project">
+                            <div class="work-overlay">
+                                <div class="work-links">
+                                    <a href="https://github.com/haleytolar/simple-js-app?tab=readme-ov-file" target="_blank" class="work-link">GitHub</a>
+                                    <a href="pokedex-case-study.html" class="work-link">Case Study</a>
+                                    <a href="https://haleytolar.github.io/simple-js-app/" target="_blank" rel="noopener noreferrer" class="work-link">Live Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="work-content">
+                            <h3 class="work-title">Pokédex</h3>
+                            <div class="work-tags">
+                                <span class="tag">JavaScript</span>
+                                <span class="tag">HTML</span>
+                                <span class="tag">CSS</span>
+                                <span class="tag">Bootstrap</span>
+                            </div>
+                            <p class="work-description">An application that retrieves information about Pokémon from an external API using JS, HTML, CSS, Bootstrap, jQuery, and ESlint</p>
+                        </div>
+                    </div>
+                    
+
+                    <div class="work-item">
+                        <div class="work-image">
+                            <img src="img/todo.png" alt="To-Do List Project">
+                            <div class="work-overlay">
+                                <div class="work-links">
+                                    <a href="https://github.com/haleytolar/Redux-To-Do-App" target="_blank" class="work-link">GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="work-content">
+                            <h3 class="work-title">To-Do List</h3>
+                            <div class="work-tags">
+                                <span class="tag">Redux</span>
+                                <span class="tag">React</span>
+                                <span class="tag">JavaScript</span>
+                            </div>
+                            <p class="work-description">This is a to-do list app built with Redux, showcasing effective task management through actions and reducers.</p>
+                        </div>
+                    </div>
+
+                    <div class="work-item">
+                        <div class="work-image">
+                            <img src="img/mongo DB.png" alt="MyFlix MongoDB Project">
+                            <div class="work-overlay">
+                                <div class="work-links">
+                                    <a href="https://github.com/haleytolar/movie_api" target="_blank" class="work-link">GitHub</a>
+                                    <a href="myflix-mongodb-case-study.html" class="work-link">Case Study</a>
+                                    <a href="https://mflixxx.netlify.app/login" target="_blank" rel="noopener noreferrer" class="work-link">Live Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="work-content">
+                            <h3 class="work-title">MyFlix - MongoDB</h3>
+                            <div class="work-tags">
+                                <span class="tag">MongoDB</span>
+                                <span class="tag">Node.js</span>
+                                <span class="tag">Express</span>
+                                <span class="tag">REST API</span>
+                            </div>
+                            <p class="work-description">This is a RESTful API for managing a movie database using MongoDB.</p>
+                        </div>
+                    </div>
+                    
+
+                    <div class="work-item">
+                        <div class="work-image">
+                            <img src="img/mflix.png" alt="MyFlix React Project">
+                            <div class="work-overlay">
+                                <div class="work-links">
+                                    <a href="https://github.com/haleytolar/myFlix-client" target="_blank" class="work-link">GitHub</a>
+                                    <a href="myflix-react-case.html" class="work-link">Case Study</a>
+                                    <a href="https://mflixxx.netlify.app/login" target="_blank" rel="noopener noreferrer" class="work-link">Live Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="work-content">
+                            <h3 class="work-title">MyFlix - React</h3>
+                            <div class="work-tags">
+                                <span class="tag">React</span>
+                                <span class="tag">RESTful API</span>
+                                <span class="tag">JavaScript</span>
+                            </div>
+                            <p class="work-description">A React app for movie browsing, saving favorites, and profile management.</p>
+                        </div>
+                    </div>
+                    
+
+                    <div class="work-item">
+                        <div class="work-image">
+                            <img src="img/meet-app.png" alt="Meet App Project">
+                            <div class="work-overlay">
+                                <div class="work-links">
+                                    <a href="https://github.com/haleytolar/meet3" target="_blank" class="work-link">GitHub</a>
+                                    <a href="meet-app-case-study.html" class="work-link">Case Study</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="work-content">
+                            <h3 class="work-title">Meet App</h3>
+                            <div class="work-tags">
+                                <span class="tag">PWA</span>
+                                <span class="tag">Google API</span>
+                                <span class="tag">JavaScript</span>
+                            </div>
+                            <p class="work-description">A PWA that fetches real-time scheduling info from the Google Calendar API.</p>
+                        </div>
+                    </div>
+                    
+
+                    <div class="work-item">
+                        <div class="work-image">
+                            <img src="img/recipe-app.png" alt="Recipe App Project">
+                            <div class="work-overlay">
+                                <div class="work-links">
+                                    <a href="https://github.com/haleytolar/recipe_app" target="_blank" class="work-link">GitHub</a>
+                                    <a href="https://recipe-app-19eh.onrender.com" target="_blank" rel="noopener noreferrer" class="work-link">Live Demo</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="work-content">
+                            <h3 class="work-title">Recipe App</h3>
+                            <div class="work-tags">
+                                <span class="tag">Django</span>
+                                <span class="tag">Python</span>
+                                <span class="tag">Database</span>
+                            </div>
+                            <p class="work-description">A user-friendly web app for storing and managing favorite recipes. Built with Django, it features a clean admin interface for adding, editing, and organizing recipes.</p>
+                        </div>
+                    </div>
+                    
+
+                    <div class="work-item">
+                        <div class="work-image">
+                            <img src="img/myflix-angular.png" alt="MyFlix Angular Project">
+                            <div class="work-overlay">
+                                <div class="work-links">
+                                    <a href="https://github.com/haleytolar/myFlix-Angular-client2" target="_blank" class="work-link">GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="work-content">
+                            <h3 class="work-title">MyFlix - Angular</h3>
+                            <div class="work-tags">
+                                <span class="tag">Angular</span>
+                                <span class="tag">TypeScript</span>
+                                <span class="tag">RESTful API</span>
+                            </div>
+                            <p class="work-description">This frontend for the MyFlix API offers dynamic and responsive UI with Angular.</p>
+                        </div>
+                    </div>
+
+                    <div class="work-item">
+                        <div class="work-image">
+                            <img src="img/chat.png" alt="Chat App Project">
+                            <div class="work-overlay">
+                                <div class="work-links">
+                                    <a href="https://github.com/haleytolar/Chat-App" target="_blank" class="work-link">GitHub</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="work-content">
+                            <h3 class="work-title">Chat App</h3>
+                            <div class="work-tags">
+                                <span class="tag">React Native</span>
+                                <span class="tag">Firebase</span>
+                                <span class="tag">JavaScript</span>
+                            </div>
+                            <p class="work-description">A React Native chat app for instant messaging, image sharing, and location sharing.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+<section id="contact" class="section contact-section">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="title-decoration"></div>
+        </div>
+        
+        <div class="contact-container">
+            <div class="contact-form-container">
+                <form action="your-form-handler-url" method="post" class="contact-form">
                     <div class="form-group">
-                        <label for="name" id="name-label">Name</label>
+                        <label for="name">Name</label>
                         <input type="text" id="name" name="name" placeholder="Your name" required>
                     </div>
                     
                     <div class="form-group">
-                        <label for="email" id="email-label">Email</label>
+                        <label for="email">Email</label>
                         <input type="email" id="email" name="email" placeholder="Your email address" required>
                     </div>
                     
                     <div class="form-group">
-                        <label for="message" id="message-label">Message</label>
+                        <label for="message">Message</label>
                         <textarea id="message" name="message" rows="6" placeholder="What would you like to tell me?" required></textarea>
                     </div>
                     
-                    <button type="submit" class="submit-btn">Send Message</button>
-                    
-                    <div class="contact-info">
-                        <a href="mailto:Haleycaroltolar@gmail.com">haleytolarc@gmail.com</a>
-                    </div>
+                    <button type="submit" class="primary-btn">Send Message</button>
                 </form>
             </div>
-        </section>
-        
-        <footer class="page-footer">
-            <p class="footer-text">Find me on</p>
-            <div class="social-icons">
-                <a href="https://github.com/haleytolar" target="_blank">
-                    <img src="img/github_icon.svg" alt="Github" style="width: 50px; height: 50px;">
-                </a>
-                <a href="https://www.linkedin.com/in/haley-tolar-7726ab28b/" target="_blank">
-                    <img src="img/linkedin_icon.svg" alt="LinkedIn" style="width: 50px; height: 50px;">
-                </a>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon email-icon"></div>
+                    <div class="contact-details">
+                        <h3>Email</h3>
+                        <a href="mailto:haleytolarc@gmail.com">haleytolarc@gmail.com</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon github-icon"></div>
+                    <div class="contact-details">
+                        <h3>GitHub</h3>
+                        <a href="https://github.com/haleytolar" target="_blank">github.com/haleytolar</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <div class="contact-icon linkedin-icon"></div>
+                    <div class="contact-details">
+                        <h3>LinkedIn</h3>
+                        <a href="https://www.linkedin.com/in/haley-tolar-7726ab28b/" target="_blank">linkedin.com/in/haley-tolar</a>
+                    </div>
+                </div>
             </div>
-        </footer>
+        </div>
+    </div>
+</section>
+        
     </div>
     
-    <script src="js/tota11y.min.js"></script>
-    <script src="js/content.js"></script>
-    <script src="js/TypingEffect.js"></script>
-    <script src="js/skills.js"></script>
 </body>
 </html>
